@@ -40,6 +40,8 @@ INSTALLED_APPS = [
     'django_forms_bootstrap',
     'accounts',
     'karamellen',
+    'home',
+    'products',
 ]
 
 MIDDLEWARE = [
@@ -123,4 +125,3 @@ however I wrote above: ALLOWED_HOSTS = [os.environ.get('C9_HOSTNAME')]
 so I keep it here for now.
 """
 MESSAGE_STORAGE = 'django.contrib.messages.storage.session.SessionStorage'
-

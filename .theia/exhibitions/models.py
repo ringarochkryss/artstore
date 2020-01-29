@@ -1,18 +1,18 @@
 from django.db import models
+# importing datetime module 
+import datetime 
 
 
 # Create your models here.
 class Product(models.Model):
     name = models.CharField(max_length=254, default='')
     artistname = models.CharField(max_length=254, default='')
-    technique = models.CharField(max_length=254, default='')
+    hall = models.CharField(max_length=254, default='')
+    city = models.CharField(max_length=254, default='')
     description = models.TextField()
-    height = models.DecimalField(max_digits=8, decimal_places=2)
-    width = models.DecimalField(max_digits=8, decimal_places=2)
-    stock = models.DecimalField(max_digits=4)
-    price = models.DecimalField(max_digits=8, decimal_places=2)
+    start_date = models.DateTimeField() 
+    end_date = models.DateTimeField() 
     image = models.ImageField(upload_to='images')
 
     def __str__(self):
         return self.name
-        
