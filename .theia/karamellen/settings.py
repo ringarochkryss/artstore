@@ -37,7 +37,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django_forms_bootstrap',
     'accounts',
+    'karamellen',
 ]
 
 MIDDLEWARE = [
@@ -50,12 +52,12 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'artstore.urls'
+ROOT_URLCONF = 'karamellen.urls'
 
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -96,6 +98,9 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+AUTHENTICATION_BACKENDS = [
+    'django.contrib.auth.backends.ModelBackend',
+    'accounts.backends.CaseInsensitiveAuth']
 
 
 LANGUAGE_CODE = 'en-us'
@@ -112,4 +117,10 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+"""
+Code below is purely to fix a issue you have with C9 -I don't know if I need it since I use gitpod,
+however I wrote above: ALLOWED_HOSTS = [os.environ.get('C9_HOSTNAME')] 
+so I keep it here for now.
+"""
 MESSAGE_STORAGE = 'django.contrib.messages.storage.session.SessionStorage'
+
