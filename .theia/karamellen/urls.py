@@ -17,13 +17,19 @@ from django.conf.urls import url, include
 from django.contrib import admin
 from accounts import urls as urls_accounts
 from accounts import urls as urls_products
+from products.views import all_products
 from accounts import urls as urls_exhibitions
+from exhibitions.views import all exhibitions
 from accounts import urls as urls_exhibitioncalendar
+from django.views import static
+from .settings import MEDIA_ROOT
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+    url('r'^$', all_products, name='index'),
+    url('r'^$', all_exhibitions, name='index'),
     url(r'^accounts/', include(urls_accounts)),
-    url(r'^products/', include(urls_products)),
-    url(r'^exhibitions/', include(urls_exhibitions)),
-    url(r'^exhibitioncalendar/', include(urls_exhibitioncalendar)),
+
+    # url(r'^exhibitions/', include(urls_exhibitions)),
+    # url(r'^exhibitioncalendar/', include(urls_exhibitioncalendar)),
 ]
