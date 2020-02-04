@@ -32,7 +32,6 @@ urlpatterns = [
     url(r'^cart/', include(urls_cart)),
     url(r'^products/', include(urls_products)),
     url(r'^exhibitions/', include(urls_exhibitions)),
-    url(r'^media/(?P<path>.*)$', static.serve, {'document_root':MEDIA_ROOT}),
-    url(r'^exhibitions/', include(urls_exhibitions)),
+    url(r'^media/(?P<path>.*)$', static.serve, {'document_root': MEDIA_ROOT}),
     # url(r'^exhibitioncalendar/', include(urls_exhibitioncalendar)),
 ]
