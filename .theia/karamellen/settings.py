@@ -27,9 +27,6 @@ DEBUG = True
 
 ALLOWED_HOSTS = [os.environ.get('C9_HOSTNAME')]
 
-
-
-
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -43,7 +40,8 @@ INSTALLED_APPS = [
     'home',
     'products',
     'exhibitions',
-   # 'exhibitioncalendar',
+    # 'exhibitioncalendar',
+    'cart',
 ]
 
 MIDDLEWARE = [
@@ -70,6 +68,7 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
                 'django.template.context_processors.media',
+                'cart.contexts.cart_contents'
             ],
         },
     },

@@ -4,8 +4,9 @@ from products.models import Product
 
 def cart_contents(request):
     """
-    Ensures that the cart contents are available when rendering
-    every page
+    Everything added to the cart will be available on all sites.
+
+    This will store cart content but when logged out this context will be lost
     """
     cart = request.session.get('cart', {})
 
