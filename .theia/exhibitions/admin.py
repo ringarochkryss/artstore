@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import exhibiions
+from .models import exhibitions
 
 
 # Register your models here.
