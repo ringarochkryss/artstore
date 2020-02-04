@@ -43,7 +43,7 @@ INSTALLED_APPS = [
     'home',
     'products',
     'exhibitions',
-    'exhibitioncalendar',
+   # 'exhibitioncalendar',
 ]
 
 MIDDLEWARE = [

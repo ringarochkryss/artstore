@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from .models import Exhibitions
+import datetime
 
 
 # return all exhibitions in the database.

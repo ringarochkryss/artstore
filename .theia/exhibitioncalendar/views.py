@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from .utils import Calendar
 class CalendarView(ListView):
-model = Event
+    model = exhibitions.Exhibitions
 template_name = 'components/calendar.html'
 success_url = reverse_lazy("calendar")
 def get_context_data(self, **kwargs):
@@ -12,4 +12,4 @@ def get_context_data(self, **kwargs):
   context['calendar'] = mark_safe(html_cal)
   context['prev_month'] = prev_month(d)
   context['next_month'] = next_month(d)
-return context
+  return context

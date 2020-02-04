@@ -1,11 +1,11 @@
 from datetime import datetime, timedelta
 from calendar import HTMLCalendar
 from .models import Event
-class Calendar(HTMLCalendar):
-def __init__(self, year=None, month=None):
-  self.year = year
-  self.month = month
-  super(Calendar, self).__init__()
+class Exhibitioncalendar(HTMLCalendar):
+    def __init__(self, year=None, month=None):
+        self.year = year
+        self.month = month
+    super(Exhibitioncalendar, self).__init__()
 def formatday(self, day, events):
   events_per_day = events.filter(start_time__day=day)
   d = ''
