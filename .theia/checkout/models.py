@@ -1,7 +1,8 @@
 from django.db import models
 from products.models import Product
 
-# Create your models here.
+
+# Order Model -customer information
 class Order(models.Model):
     full_name = models.CharField(max_length=50, blank=False)
     phone_number = models.CharField(max_length=20, blank=False)
@@ -11,15 +12,18 @@ class Order(models.Model):
     country = models.CharField(max_length=40, blank=False)
     date = models.DateField()
 
+# returns a summary
     def __str__(self):
         return "{0}-{1}-{2}".format(self.id, self.date, self.full_name)
 
 
+# Order information - what product, order and quantity
 class OrderLineItem(models.Model):
     order = models.ForeignKey(Order, null=False)
     product = models.ForeignKey(Product, null=False)
     quantity = models.IntegerField(blank=False)
 
+# returns a summary
     def __str__(self):
         return "{0} {1} @ {2}".format(
             self.quantity, self.product.name, self.product.price)
