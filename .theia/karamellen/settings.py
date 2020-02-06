@@ -20,8 +20,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/1.11/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'nv_6vblqp^j2!7%ty)et(f7-2(1u$&&if3&i+wi_3wyqriv24-'
-# SECRET_KEY = os.environ['SECRET_KEY']
+SECRET_KEY = [os.environ.get('SECRET_KEY')]
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
@@ -125,6 +124,9 @@ STATICFILES_DIRS = (
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
+
+STRIPE_PUBLISHABLE = os.getenv('STRIPE_PUBLISHABLE')
+STRIPE_SECRET = os.getenv('STRIPE_SECRET')
 
 """
 Code below is purely to fix a issue you have with C9 -I don't know if I need it since I use gitpod,
