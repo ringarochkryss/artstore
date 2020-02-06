@@ -1,12 +1,118 @@
+/*colors and fonts 
+green #9cb58e
+blue #94aaa3
+light pink #fdccdd
+darker pink #e99cb9
+dark bluegrey #1e3233
+almostwhite #f0f4e6
+grey #bfc0bd
+yellow #fcba03
+
+ */
+
+
 body {
     font-family: Arial;
-    padding-top: 100px;
+    padding-top: 5px;
+    background-color: white;
 }
 
+.topnavbarbackground {
+    background-color: transparent;
+    margin-top: 1px;
+}
+
+
+.bottomnavbarbackground {
+    background-color: #9cb58e;
+}
+
+
+/*buttons*/
+.bluebutton {
+    color: #f0f4e6;
+    width: 4em;
+    height: 4em;
+    border-radius: 50%;
+    background: #94aaa3;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
+    border: 2px solid #f0f4e6;
+    margin-right: 2px;
+    justify-content: center;
+    align-items: center;
+    transition: 0.5s;
+}
+
+    .bluebutton:hover {
+        background: #f0f4e6;
+        color: #1e3233;
+        border: 2px solid #6c9ea1;
+    }
+
+.greenbutton {
+    color: #f0f4e6;
+    width: 4em;
+    height: 4em;
+    border-radius: 50%;
+    background: #94aaa3;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
+    border: 2px solid #f0f4e6;
+    margin-right: 2px;
+    justify-content: center;
+    align-items: center;
+    transition: 0.5s;
+}
+
+    .greenbutton:hover {
+        background: #f0f4e6;
+        color: #1e3233;
+        border: 2px solid #94aaa3;
+    }
+
+    .darkbutton {
+    color: #94aaa3;
+    width: 4em;
+    height: 4em;
+    border-radius: 50%;
+    background: #1e3233;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
+    border: 2px solid #94aaa3;
+    margin-right: 2px;
+    justify-content: center;
+    align-items: center;
+    transition: 0.5s;
+}
+
+    .darkbutton:hover {
+        background: #94aaa3;
+        color: #f0f4e6;;
+        border: 2px solid #f0f4e6;
+    }
+
+.pinkbutton {
+    color: #f0f4e6;
+    width: 4em;
+    height: 4em;
+    border-radius: 50%;
+    background: #e99cb9;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
+    border: 2px solid #f0f4e6;
+    margin-right: 2px;
+    justify-content: center;
+    align-items: center;
+    transition: 0.5s;
+}
+
+    .pinkbutton:hover {
+        background: white;
+        color: #1e3233;
+        border: 2px solid #6c9ea1;
+    }
+
 footer {
-    margin-top: 40px;
-    padding-top: 20px;
-    padding-bottom: 20px;
+    margin-top: 2px;
+    padding-top: 2px;
+    padding-bottom: 2px;
     border-top: 1px solid #ededed;
     color: #A9A9A9;
 }
@@ -16,10 +122,11 @@ footer {
 }
 
 .accountform {
-    padding-top: 20px;
+    padding-top: 5px;
 }
 
 .badge {
+    background-color: #e99cb9;
     padding-left: 9px;
     padding-right: 9px;
     -webkit-border-radius: 9px;
@@ -27,9 +134,10 @@ footer {
     border-radius: 9px;
 }
 
+
 .label-warning[href],
 .badge-warning[href] {
-    background-color: #c67605;
+    background-color: #e99cb9;
 }
 
 .product {
@@ -48,17 +156,18 @@ caption p {
 .row.row-flex {
     display: flex;
     flex-wrap: wrap;
-    margin-top: 30px;
+    margin-top: 1px;
 }
 
-.panel-default {
+.card-default {
     border-color: transparent;
-    padding: 0 10px;
+    padding: 0 7px;
+    background-color: #f0f4e6;
 }
 
-.panel-body {
+.card-body {
     height: 100%;
-    border: 1px solid #ddd;
+    border: 2px solid transparent;
 }
 
 .product-description {
