@@ -13,7 +13,7 @@
    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>-->
 
     <!-- Style Sheets-->
-    <link href="https://fonts.googleapis.com/css?family=Lato|Montserrat" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Bungee+Hairline|Julius+Sans+One|Montserrat&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" type="text/css" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
@@ -32,44 +32,52 @@
 </head>
 <body>
 <!--Top navbar-->
-<nav class="navbar navbar-light topnavbarbackground">
-     <h3>ART STORE</h3> <a class="navbar-brand" href="/"> <img src="media/images/karamellbrandlogo.jpg" width="auto" height="80px" class="d-inline align-top" alt="karamellbrandlogo"></a>
+<nav class="navbar navbar-light topnavbarbackground justify-content-center">
+      <a class="navbar-brand-center" href="{%url 'products' %}"><h2>ART STORE</h2></a>
 
 </nav>
-<!--Bottom navbar-->
-<nav class="navbar navbar-expand-lg fixed-bottom navbar-light bottomnavbarbackground">
+
+ 
+    <div class="container">
+        {% block content %} {% endblock %}
+    </div>
+
+    <footer>
+    <!--Bottom navbar-->
+<nav class="navbar navbar-expand-lg fixed-bottom navbar-dark bottomnavbarbackground">
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
   
   <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
-    <ul class="navbar-nav mr-auto mt-2 mt-lg-0 text-center">
-      <li class="nav-item active">
-        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+    <ul class="navbar-nav mr-auto mt-auto text-center">
+      <li class="nav-item active bluebutton">
+        <a class="nav-link active buttontext" href="#">Home<h3><i class="fas fa-home"></i></h3><span class="sr-only">(current)</span></a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">About</a>
+      <li class="nav-item active bluebutton">
+        <a class="nav-link buttontext" href="#">About
+        <h3><i class="fas fa-dungeon"></i></h3></a>
       </li>
       {% if user.is_authenticated %}
-      <li class="nav-item">
-        <a class="nav-link" href="{% url 'profile' %}">Profile</a>
+      <li class="nav-item active bluebutton">
+        <a class="nav-link buttontext" href="{% url 'profile' %}">profile
+        <h3><i class="fas fa-user"></i></h3></a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="{% url 'logout' %}">
-        <i class="fas fa-sign-out-alt"></i></br>Log Out</a>
+      <li class="nav-item active bluebutton">
+        <a class="nav-link buttontext" href="{% url 'logout' %}">Log Out <i class="fas fa-key"></i></a>
         {%  else %}
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="{% url 'register' %}"><i class="fas fa-user"></i></br>Register</a>
+      <li class="nav-item active bluebutton">
+        <a class="nav-link buttontext" href="{% url 'register' %}"><i class="fas fa-user"></i></br>Register</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="{% url 'login' %}">
+      <li class="nav-item active bluebutton">
+        <a class="nav-link buttontext" href="{% url 'login' %}">
         <i class="fas fa-sign-in-alt"></i></br>Log In</a>
       </li>
         {% endif %}   
-      <li class="nav-item">
-        <a class="nav-link" href="{% url 'view_cart' %}">
-        <i class="fas fa-shopping-cart"></i></br>Cart
+      <li class="nav-item active bluebutton">
+        <a class="nav-link shop buttontext" href="{% url 'view_cart' %}">Cart
+        <h3><i class="fas fa-shopping-cart"></i></h3></br>
                             {% if product_count > 0 %}
                             <label class="badge badgecolor">{{ product_count }}</label>
                             {% endif %}
@@ -89,20 +97,12 @@
    
             <form class="form-inline my-2 my-lg-0" action="{% url 'search' %}" method="get">
                 <input class="form-control mr-sm-2" type="text" name="q" placeholder="type here">
-                <button class="btn bluebutton ml-1 my-2 my-sm-0" type="search"><i class="fas fa-search"></i></button>
+                <button class="btn bluebutton ml-1 my-2 my-sm-0" type="search"><h3><i class="fas fa-search"></i></h3></button>
             </form>
    
   </div>
 </nav>
- 
-    <div class="container">
-        {% block content %} {% endblock %}
-    </div>
 
-    <footer>
-        <div class="container">
-            <p>Made by Code Institute bootcampers</p>
-        </div>
     </footer>
 </body>
 </html>

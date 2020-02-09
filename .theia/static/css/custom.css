@@ -1,13 +1,13 @@
 /*colors and fonts 
-green #9cb58e
-blue #94aaa3
-light pink #fdccdd
-darker pink #e99cb9
 dark bluegrey #1e3233
 almostwhite #f0f4e6
 grey #bfc0bd
 yellow #fcba03
 
+
+font-family: 'Julius Sans One', sans-serif;
+font-family: 'Montserrat', sans-serif;
+font-family: 'Bungee Hairline', cursive;
  */
 
 
@@ -20,23 +20,74 @@ body {
 .topnavbarbackground {
     background-color: transparent;
     margin-top: 1px;
+    border-top: 10px dotted hsl(350, 98%, 50%);
 }
 
+.logo {
+    background-image url("media/images/karamellbrandlogo.jpg");
+     height: 80px;
+     
+}
 
 .bottomnavbarbackground {
-    background-color: #9cb58e;
+    background-color:  hsl(350, 98%, 50%);
 }
+
+
+.nav-item .active {
+ color: white;
+    width: 5em;
+    height: 5em;
+    background:hsl(350, 98%, 50%);
+    border-top: 5px dotted white;
+    margin-right: 2px;
+    justify-content: center;
+    align-items: center;
+    transition: 0.5s;
+}
+
+    .nav-item .active :hover {
+        background: hsl(350, 98%, 50%);
+        color: white;
+        border: 2px  hsl(350, 98%, 50%);
+    }
+
+
+/*Text*/
+h1,
+h3 {
+font-family: 'Julius Sans One', sans-serif;
+}
+
+h2 {
+font-family: 'Bungee Hairline', cursive;
+font-size: 7em;
+color:green;
+font-weight: 300;
+}
+
+p {
+font-family: 'Montserrat', sans-serif;
+}
+
+.buttontext {
+    font-family: 'Julius Sans One', sans-serif;
+    font-size: 15px;
+    color: white;
+
+}
+
+
 
 
 /*buttons*/
 .bluebutton {
     color: #f0f4e6;
-    width: 4em;
-    height: 4em;
-    border-radius: 50%;
-    background: #94aaa3;
+    width: 5em;
+    height: 5em;
+    background: hsl(350, 98%, 50%);
     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
-    border: 2px solid #f0f4e6;
+    border: 2px solid  hsl(350, 98%, 50%);
     margin-right: 2px;
     justify-content: center;
     align-items: center;
@@ -44,39 +95,20 @@ body {
 }
 
     .bluebutton:hover {
-        background: #f0f4e6;
-        color: #1e3233;
-        border: 2px solid #6c9ea1;
+        background: green;
+        color: white;
+        border: 2px  hsl(350, 98%, 50%);
     }
 
-.greenbutton {
-    color: #f0f4e6;
-    width: 4em;
-    height: 4em;
-    border-radius: 50%;
-    background: #94aaa3;
-    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
-    border: 2px solid #f0f4e6;
-    margin-right: 2px;
-    justify-content: center;
-    align-items: center;
-    transition: 0.5s;
-}
-
-    .greenbutton:hover {
-        background: #f0f4e6;
-        color: #1e3233;
-        border: 2px solid #94aaa3;
-    }
 
     .darkbutton {
-    color: #94aaa3;
+    color: white;
     width: 4em;
     height: 4em;
     border-radius: 50%;
-    background: #1e3233;
+    background: hsl(350, 98%, 50%);
     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
-    border: 2px solid #94aaa3;
+    border: 2px solid hsl(350, 98%, 50%);
     margin-right: 2px;
     justify-content: center;
     align-items: center;
@@ -84,37 +116,16 @@ body {
 }
 
     .darkbutton:hover {
-        background: #94aaa3;
-        color: #f0f4e6;;
-        border: 2px solid #f0f4e6;
+        background: green;
+        color: #f0f4e6;
+        border: 2px solid green;
     }
 
-.pinkbutton {
-    color: #f0f4e6;
-    width: 4em;
-    height: 4em;
-    border-radius: 50%;
-    background: #e99cb9;
-    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
-    border: 2px solid #f0f4e6;
-    margin-right: 2px;
-    justify-content: center;
-    align-items: center;
-    transition: 0.5s;
-}
-
-    .pinkbutton:hover {
-        background: white;
-        color: #1e3233;
-        border: 2px solid #6c9ea1;
-    }
 
 footer {
     margin-top: 2px;
     padding-top: 2px;
     padding-bottom: 2px;
-    border-top: 1px solid #ededed;
-    color: #A9A9A9;
 }
 
 .icon-bar {
@@ -126,8 +137,8 @@ footer {
 }
 
 .badge {
-    background-color: #e99cb9;
-    padding-left: 9px;
+    background-color: green;
+    color:white;
     padding-right: 9px;
     -webkit-border-radius: 9px;
     -moz-border-radius: 9px;
@@ -137,7 +148,8 @@ footer {
 
 .label-warning[href],
 .badge-warning[href] {
-    background-color: #e99cb9;
+    background-color: rgb(240, 9, 78);
+    color: white;
 }
 
 .product {
@@ -160,9 +172,8 @@ caption p {
 }
 
 .card-default {
-    border-color: transparent;
+    border-color: 1px #f0f4e6;
     padding: 0 7px;
-    background-color: #f0f4e6;
 }
 
 .card-body {
