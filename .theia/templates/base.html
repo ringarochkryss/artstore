@@ -33,11 +33,10 @@
 <body>
 <!--Top navbar-->
 <nav class="navbar navbar-light topnavbarbackground justify-content-center">
-      <a class="navbar-brand-center" href="{%url 'products' %}"><h2>ART STORE</h2></a>
-
+      <a class="navbar-brand-center"><h2>ART STORE</h2></a>
 </nav>
 
- 
+
     <div class="container">
         {% block content %} {% endblock %}
     </div>
@@ -51,45 +50,44 @@
   
   <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
     <ul class="navbar-nav mr-auto mt-auto text-center">
-      <li class="nav-item active bluebutton">
+      <li class="nav-item active navbutton">
         <a class="nav-link active buttontext" href="#">Home<h3><i class="fas fa-home"></i></h3><span class="sr-only">(current)</span></a>
       </li>
-      <li class="nav-item active bluebutton">
+      <li class="nav-item active navbutton">
         <a class="nav-link buttontext" href="#">About
         <h3><i class="fas fa-dungeon"></i></h3></a>
       </li>
       {% if user.is_authenticated %}
-      <li class="nav-item active bluebutton">
+      <li class="nav-item active navbutton">
         <a class="nav-link buttontext" href="{% url 'profile' %}">profile
         <h3><i class="fas fa-user"></i></h3></a>
       </li>
-      <li class="nav-item active bluebutton">
+      <li class="nav-item active navbutton">
         <a class="nav-link buttontext" href="{% url 'logout' %}">Log Out <i class="fas fa-key"></i></a>
         {%  else %}
       </li>
-      <li class="nav-item active bluebutton">
+      <li class="nav-item active navbutton">
         <a class="nav-link buttontext" href="{% url 'register' %}"><i class="fas fa-user"></i></br>Register</a>
       </li>
-      <li class="nav-item active bluebutton">
+      <li class="nav-item active navbutton">
         <a class="nav-link buttontext" href="{% url 'login' %}">
         <i class="fas fa-sign-in-alt"></i></br>Log In</a>
       </li>
         {% endif %}   
-      <li class="nav-item active bluebutton">
-        <a class="nav-link shop buttontext" href="{% url 'view_cart' %}">Cart
-        <h3><i class="fas fa-shopping-cart"></i></h3></br>
-                            {% if product_count > 0 %}
-                            <label class="badge badgecolor">{{ product_count }}</label>
-                            {% endif %}
-                        </a>
+      <li class="nav-item active navbutton">
+        <a class="nav-link buttontext" href="{% url 'view_cart' %}">Cart
+        {% if product_count > 0 %}
+            <label class="badge">{{ product_count }}</label>
+        {% endif %}
+        <h3><i class="fas fa-shopping-cart"></i></h3></a>
       </li>                           
     </ul>
      {% if messages %}
-        <div class="alert alert-success">
+        <div class="toast" alert role="alert" aria-live="assertive" aria-atomic="true" style="position: absolute; top: 5; right: 4;>
             <div class="messages">
                 {% for message in messages %}
-                <i class="fas fa-bullhorn"></i>
-                    {{ message }}
+                <div class="toast-header"><i class="fas fa-bullhorn"></i>ART STORE</div>
+                   <div class="toast-body"><h3>{{ message }}</h3></div>
                 {% endfor %}
             </div>
         </div>
@@ -97,7 +95,7 @@
    
             <form class="form-inline my-2 my-lg-0" action="{% url 'search' %}" method="get">
                 <input class="form-control mr-sm-2" type="text" name="q" placeholder="type here">
-                <button class="btn bluebutton ml-1 my-2 my-sm-0" type="search"><h3><i class="fas fa-search"></i></h3></button>
+                <button class="btn navbutton ml-1 my-2 my-sm-0" type="search"><h3><i class="fas fa-search"></i></h3></button>
             </form>
    
   </div>
