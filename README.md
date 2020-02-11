@@ -1,5 +1,7 @@
 # Code Institute
 
+[![Build Status](https://travis-ci.org/ringarochkryss/artstore.svg?branch=master)](https://travis-ci.org/ringarochkryss/artstore)
+
 Welcome Petra  Mellbrand,
 
 We have preinstalled all of the tools you need to get started.
