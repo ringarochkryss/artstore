@@ -1,1 +1,1 @@
-web: gunicorn karamellbrand.wsgi:application
+web: gunicorn karamellen.wsgi:application
