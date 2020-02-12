@@ -3,7 +3,7 @@
 
 [![Build Status](https://travis-ci.org/ringarochkryss/artstore.svg?branch=master)](https://travis-ci.org/ringarochkryss/artstore)
 
-# Mallbrand Art Store 
+# The Art Store 
 
 This site has a web shop for art and a calendar with exhibitions. 
  
