@@ -57,7 +57,7 @@ font-family: 'Julius Sans One', sans-serif;
 h2 {
 font-family: 'Bungee Hairline', cursive;
 font-size: 7em;
-color:green;
+color:black;
 font-weight: 300;
 }
 
@@ -80,7 +80,7 @@ font-family: 'Montserrat', sans-serif;
 .product-artistname {
     font-family: 'Julius Sans One', sans-serif;
     font-size: 15px;
-    color: green;
+    color: black;
 }
 
 
@@ -100,7 +100,7 @@ font-family: 'Montserrat', sans-serif;
 }
 
     .navbutton:hover {
-        background: green;
+        background: black;
         color: white;
         border: 2px  hsl(350, 98%, 50%);
     }
@@ -109,9 +109,9 @@ font-family: 'Montserrat', sans-serif;
     color: #f0f4e6;
     width: 8em;
     height: 3em;
-    background: green;
+    background: #badecd;
     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
-    border: 2px solid  green;
+    border: 2px solid  #badecd;
     margin-right: 2px;
     justify-content: center;
     align-items: center;
@@ -140,9 +140,9 @@ font-family: 'Montserrat', sans-serif;
 }
 
     .redbutton:hover {
-        background: green;
+        background: #badecd;
         color: #f0f4e6;
-        border: 2px solid green;
+        border: 2px solid #badecd;
     }
 
     .greenbutton {
@@ -150,9 +150,9 @@ font-family: 'Montserrat', sans-serif;
     width: 3em;
     height: 3em;
     border-radius: 50%;
-    background: green;
+    background: #badecd;
     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
-    border: 2px solid green;
+    border: 2px solid #badecd;
     justify-content: center;
     align-items: center;
     transition: 0.5s;
@@ -193,7 +193,7 @@ footer {
 
 .label-warning[href],
 .badge-warning[href] {
-    background-color: green;
+    background-color: #badecd;
     color: white;
 }
 
