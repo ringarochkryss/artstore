@@ -1,0 +1,7 @@
+env.py
+.png
+.jpg
+static/
+media/
+*.py[cod]
+__pycache__/
