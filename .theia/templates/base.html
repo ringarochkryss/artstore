@@ -57,6 +57,10 @@
         <a class="nav-link buttontext" href="#">About
         <h3><i class="fas fa-dungeon"></i></h3></a>
       </li>
+      <li class="nav-item active navbutton">
+        <a class="nav-link buttontext" href="{% url 'cal' %}">Calendar
+        <h3><i class="fas fa-calendar"></i></h3></a>
+      </li>
       {% if user.is_authenticated %}
       <li class="nav-item active navbutton">
         <a class="nav-link buttontext" href="{% url 'profile' %}">profile
