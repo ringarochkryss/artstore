@@ -27,7 +27,9 @@ SECRET_KEY = [os.environ.get('SECRET_KEY')]
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = [os.environ.get('C9_HOSTNAME'), ('localhost')]
+ALLOWED_HOSTS = [os.environ.get('C9_HOSTNAME'),
+                 'localhost',
+                 'petrasartstore.herokuapp.com']
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -39,7 +41,6 @@ INSTALLED_APPS = [
     'django_forms_bootstrap',
     'accounts',
     'karamellen',
-    'home',
     'products',
     'exhibitions',
     'cart',
@@ -92,10 +93,8 @@ DATABASES = {
 }
 """
 
-if 'DATABASE_URL' in os.environ:
-    DATABASES = {
-        'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
-    }
+if "DATABASE_URL" in os.environ:
+    DATABASES = {'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))}
 else:
     print("Database URL not found. Using SQLite instead")
     DATABASES = {
@@ -106,8 +105,8 @@ else:
     }
 
 
-# DATABASES = {'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))}
-
+# Password validation
+# https://docs.djangoproject.com/en/1.11/ref/settings/#auth-password-validators
 
 AUTH_PASSWORD_VALIDATORS = [
     {
@@ -128,7 +127,8 @@ AUTHENTICATION_BACKENDS = [
     'django.contrib.auth.backends.ModelBackend',
     'accounts.backends.CaseInsensitiveAuth']
 
-
+# Internationalization
+# https://docs.djangoproject.com/en/1.11/topics/i18n/
 LANGUAGE_CODE = 'en-us'
 
 TIME_ZONE = 'UTC'
@@ -143,7 +143,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 AWS_S3_OBJECT_PARAMETERS = {
-    'Expires': 'Thu, 31 Dec 2099 20:00:00 GMT',
+    'Expires': 'Thu, 31 Dec 2099 21:00:00 GMT',
     'CacheControl': 'max-age=94608000'
 }
 
@@ -154,6 +154,7 @@ AWS_ACCESS_KEY_ID = os.environ.get("AWS_ACCESS_KEY_ID")
 AWS_SECRET_ACCESS_KEY = os.environ.get("AWS_SECRET_ACCESS_KEY")
 
 AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
+AWS_DEFAULT_ACL = None
 
 # STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 STATICFILES_LOCATION = 'static'

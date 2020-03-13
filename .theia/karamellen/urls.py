@@ -23,7 +23,6 @@ from exhibitions.views import all_exhibitions
 from products import urls as urls_products
 from checkout import urls as urls_checkout
 from products.views import all_products
-# from exhibitioncalendar import urls as urls_exhibitioncalendar
 from django.views import static
 from .settings import MEDIA_ROOT
 
@@ -38,5 +37,4 @@ urlpatterns = [
     url(r'^products/', include(urls_products)),
     url(r'^exhibitions/', include(urls_exhibitions)),
     url(r'^media/(?P<path>.*)$', static.serve, {'document_root': MEDIA_ROOT}),
-    # url(r'^exhibitioncalendar/', include(urls_exhibitioncalendar)),
 ]
