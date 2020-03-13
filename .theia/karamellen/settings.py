@@ -27,7 +27,7 @@ SECRET_KEY = [os.environ.get('SECRET_KEY')]
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = [os.environ.get('C9_HOSTNAME')]
+ALLOWED_HOSTS = [os.environ.get('C9_HOSTNAME'), ('localhost')]
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -42,7 +42,6 @@ INSTALLED_APPS = [
     'home',
     'products',
     'exhibitions',
-    # 'exhibitioncalendar',
     'cart',
     'checkout',
     'storages',
