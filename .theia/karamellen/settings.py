@@ -43,7 +43,6 @@ INSTALLED_APPS = [
     'karamellen',
     'products',
     'exhibitions',
-    'cal',
     'cart',
     'checkout',
     'storages',
