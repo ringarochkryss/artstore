@@ -58,7 +58,7 @@
         <h3><i class="fas fa-dungeon"></i></h3></a>
       </li>
       <li class="nav-item active navbutton">
-        <a class="nav-link buttontext" href="#">Calendar
+        <a href="{% url 'admin:index' %}">Calendar</a>
         <h3><i class="fas fa-calendar"></i></h3></a>
       </li>
       {% if user.is_authenticated %}
