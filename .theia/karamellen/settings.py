@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/1.11/ref/settings/
 """
 
 import os
-# import env
+#import env
 import dj_database_url
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -40,7 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django_forms_bootstrap',
     'accounts',
-    'karamellen',
+    # 'karamellen',
     'products',
     'exhibitions',
     'cart',
@@ -150,11 +150,11 @@ AWS_S3_OBJECT_PARAMETERS = {
 
 AWS_STORAGE_BUCKET_NAME = 'petrasartstore'
 AWS_S3_REGION_NAME = 'eu-west-1'
-AWS_ACCESS_KEY_ID = os.environ.get("AWS_ACCESS_KEY_ID")
+AWS_ACCESS_KEY_ID = os.environ.get("AWS_SECRET_KEY_ID")
 AWS_SECRET_ACCESS_KEY = os.environ.get("AWS_SECRET_ACCESS_KEY")
 
 AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
-AWS_DEFAULT_ACL = None
+# AWS_DEFAULT_ACL = None 
 
 # STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 STATICFILES_LOCATION = 'static'
@@ -178,12 +178,11 @@ MEDIA_URL = "https://%s/%s/" % (AWS_S3_CUSTOM_DOMAIN, MEDIAFILES_LOCATION)
 STRIPE_PUBLISHABLE = [os.getenv('STRIPE_PUBLISHABLE')]
 STRIPE_SECRET = [os.getenv('STRIPE_SECRET')]
 
-STRIPE_PUBLISHABLE = os.getenv('STRIPE_PUBLISHABLE')
-STRIPE_SECRET = os.getenv('STRIPE_SECRET')
+# STRIPE_PUBLISHABLE = os.getenv('STRIPE_PUBLISHABLE')
+# STRIPE_SECRET = os.getenv('STRIPE_SECRET')
 
 """
 Code below is purely to fix a issue you have with C9 -I don't know if I need it since I use gitpod,
-however I wrote above: ALLOWED_HOSTS = [os.environ.get('C9_HOSTNAME')] 
-so I keep it here for now.
+but I keep it here for now so I don't forget. 
 """
 MESSAGE_STORAGE = 'django.contrib.messages.storage.session.SessionStorage'
