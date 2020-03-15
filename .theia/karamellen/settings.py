@@ -40,13 +40,13 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django_forms_bootstrap',
     'accounts',
-    # 'karamellen',
     'products',
     'exhibitions',
     'cart',
     'checkout',
     'storages',
     'thecalendar'
+    # 'karamellen', should not be mentioned here
 ]
 
 MIDDLEWARE = [
