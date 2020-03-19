@@ -41,11 +41,11 @@ INSTALLED_APPS = [
     'django_forms_bootstrap',
     'accounts',
     'products',
-    'exhibitions',
     'cart',
     'checkout',
     'storages',
-    'thecalendar'
+    'events',
+    'clear_cache'
     # 'karamellen', should not be mentioned here
 ]
 

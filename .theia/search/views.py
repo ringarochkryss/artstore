@@ -1,6 +1,5 @@
 from django.shortcuts import render
 from products.models import Product
-from exhibitions.models import Exhibitions
 
 
 # Search products
