@@ -1,7 +1,11 @@
 from __future__ import unicode_literals
 from django.db import models
-# from django.core.exceptions import ValidationError
+from django.core.exceptions import ValidationError
 from django.core.urlresolvers import reverse
+
+
+class calendarcontent(models.Model):
+    exhibition = models.TextField(u'Exhibition', help_text=u'Exhibition', blank=True, null=True)
 
 
 class Event(models.Model):

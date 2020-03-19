@@ -8,6 +8,7 @@ from django.core.urlresolvers import reverse
 from calendar import HTMLCalendar
 from django.utils.safestring import mark_safe
 
+
 class EventAdmin(admin.ModelAdmin):
     list_display = ['exhibition', 'artist', 'notes', 'day', 'start_time', 'end_time', 'hall']
     change_list_template = 'admin/events/change_list.html'
@@ -45,5 +46,6 @@ class EventAdmin(admin.ModelAdmin):
         html_calendar = html_calendar.replace('<td ', '<td  width="150" height="150"')
         extra_context['calendar'] = mark_safe(html_calendar)
         return super(EventAdmin, self).changelist_view(request, extra_context)
- 
+
+
 admin.site.register(Event, EventAdmin)
