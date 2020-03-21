@@ -58,6 +58,16 @@ Source: https://github.com/rdegges/django-clear-cache
 
 
 
+Git ignore didn' work after moving files around in my workspace. I found out they were cached
+in the repository, this is how to fix it -thankyou stackoverflow-hero MarckK 
+
+git rm -r --cached .
+ git add .
+
+Then commit your changes:
+
+git commit -m "Untrack files in .gitignore"
+
 ## UX
  
 Use this section to provide insight into your UX process, focusing on who this website is for, what it is that they want to achieve and how your project is the best way to help them achieve these things.
