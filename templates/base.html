@@ -1,0 +1,108 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>KARAMELLBRANDART</title>
+
+      <!-- Bootstrap 3 from tutorial -commented out not using it-->
+    <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/cerulean/bootstrap.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>-->
+
+    <!-- Style Sheets-->
+    <link href="https://fonts.googleapis.com/css?family=Bungee+Hairline|Julius+Sans+One|Montserrat&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
+    
+    <!--<link rel="stylesheet" href="{% static 'fontawesome/css/font-awesome.min.css' %}">-->
+    <link rel="stylesheet" href="{% static 'css/custom.css' %}">
+
+    <!-- For additional Bootstrap: jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    {% block head_js %}
+    {% endblock head_js %}
+
+</head>
+<body>
+<!--Top navbar-->
+<nav class="navbar navbar-light topnavbarbackground justify-content-center">
+      <a class="navbar-brand-center"><h2>ART STORE</h2></a>
+</nav>
+
+
+    <div class="container">
+        {% block content %} {% endblock %}
+    </div>
+
+    <footer>
+    <!--Bottom navbar-->
+<nav class="navbar navbar-expand-lg fixed-bottom navbar-dark bottomnavbarbackground">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  
+  <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+    <ul class="navbar-nav mr-auto mt-auto text-center">
+      <li class="nav-item active navbutton">
+        <a class="nav-link buttontext" href="{% url 'products' %}">Store<h3><i class="fas fa-store-alt"></i></h3><span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item active navbutton">
+        <a class="nav-link buttontext" href="#">Exhibit
+        <h3><i class="fas fa-chalkboard-teacher"></i></h3></a>
+      </li>
+      <li class="nav-item active navbutton">
+        <a class="nav-link buttontext" href="{% url 'admin:index' %}">Admin
+        <h3><i class="fas fa-user-lock"></i></h3></a>
+      </li>
+      {% if user.is_authenticated %}
+      <li class="nav-item active navbutton">
+        <a class="nav-link buttontext" href="{% url 'profile' %}">profile
+        <h3><i class="fas fa-user"></i></h3></a>
+      </li>
+      <li class="nav-item active navbutton">
+        <a class="nav-link buttontext" href="{% url 'logout' %}">Log Out <i class="fas fa-key"></i></a>
+        {%  else %}
+      </li>
+      <li class="nav-item active navbutton">
+        <a class="nav-link buttontext" href="{% url 'register' %}"><i class="fas fa-user-plus"></i></br>Register</a>
+      </li>
+      <li class="nav-item active navbutton">
+        <a class="nav-link buttontext" href="{% url 'login' %}"><i class="fas fa-sign-in-alt"></i></br>Log In</a>
+      </li>
+        {% endif %}   
+      <li class="nav-item active navbutton">
+        <a class="nav-link buttontext" href="{% url 'view_cart' %}">Cart
+        {% if product_count > 0 %}
+            <label class="badge">{{ product_count }}</label>
+        {% endif %}
+        <h3><i class="fas fa-shopping-cart"></i></h3></a>
+      </li>                           
+    </ul>
+     {% if messages %}
+        <div class="toast" alert role="alert" aria-live="assertive" aria-atomic="true" style="position: absolute; top: 5; right: 4;">
+            <div class="messages">
+                {% for message in messages %}
+                <div class="toast-header"><i class="fas fa-bullhorn"></i>ART STORE</div>
+                   <div class="toast-body"><h3>{{ message }}</h3></div>
+                {% endfor %}
+            </div>
+        </div>
+        {% endif %}
+   
+            <form class="form-inline my-2 my-lg-0" action="{% url 'search' %}" method="get">
+                <input class="form-control mr-sm-2" type="text" name="q" placeholder="type here">
+                <button class="btn navbutton ml-1 my-2 my-sm-0" type="search"><h3><i class="fas fa-search"></i></h3></button>
+            </form>
+  </div>
+</nav>
+
+    </footer>
+</body>
+</html>

@@ -1,0 +1,231 @@
+/*colors and fonts 
+dark bluegrey #1e3233
+almostwhite #f0f4e6
+grey #bfc0bd
+yellow #fcba03
+
+
+font-family: 'Julius Sans One', sans-serif;
+font-family: 'Montserrat', sans-serif;
+font-family: 'Bungee Hairline', cursive;
+ */
+
+
+body {
+    font-family: Arial;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    background-color: white;
+}
+
+.topnavbarbackground {
+    background-color: transparent;
+    margin-top: 1px;
+    border-top: 10px dotted hsl(350, 98%, 50%);
+}
+
+.bottomnavbarbackground {
+    background-color:  hsl(350, 98%, 50%);
+}
+
+
+.nav-item .active {
+ color: white;
+    width: 5em;
+    height: 5em;
+    background:hsl(350, 98%, 50%);
+    border-top: 5px dotted white;
+    margin-right: 2px;
+    justify-content: center;
+    align-items: center;
+    transition: 0.5s;
+}
+
+    .nav-item .active :hover {
+        background: hsl(350, 98%, 50%);
+        color: white;
+        border: 2px  hsl(350, 98%, 50%);
+    }
+
+
+/*Text*/
+h1,
+h3 {
+font-family: 'Julius Sans One', sans-serif;
+}
+
+h2 {
+font-family: 'Bungee Hairline', cursive;
+font-size: 7em;
+color:black;
+font-weight: 300;
+}
+
+p {
+font-family: 'Montserrat', sans-serif;
+}
+
+.buttontext {
+    font-family: 'Julius Sans One', sans-serif;
+    font-size: 15px;
+    color: white;
+}
+
+.buttontextsm {
+    font-family: 'Julius Sans One', sans-serif;
+    font-size: 12px;
+    color: white;
+}
+
+.product-artistname {
+    font-family: 'Julius Sans One', sans-serif;
+    font-size: 15px;
+    color: black;
+}
+
+
+
+/*buttons*/
+.navbutton {
+    color: #f0f4e6;
+    width: 5em;
+    height: 5em;
+    background: hsl(350, 98%, 50%);
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
+    border: 2px hsl(350, 98%, 50%);
+    margin-right: 2px;
+    justify-content: center;
+    align-items: center;
+    transition: 0.5s;
+}
+
+    .navbutton:hover {
+        background: black;
+        color: white;
+        border: 2px  hsl(350, 98%, 50%);
+    }
+
+.longbutton {
+    color: #f0f4e6;
+    width: 8em;
+    height: 3em;
+    background: #badecd;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
+    border: 2px solid  #badecd;
+    margin-right: 2px;
+    justify-content: center;
+    align-items: center;
+    transition: 0.5s;
+}
+
+    .longbutton:hover {
+        background: black;
+        color: white;
+        border: 2px  hsl(350, 98%, 50%);
+    }
+
+
+    .redbutton {
+    color: white;
+    width: 4em;
+    height: 4em;
+    border-radius: 50%;
+    background: hsl(350, 98%, 50%);
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
+    border: 2px solid hsl(350, 98%, 50%);
+    margin-right: 2px;
+    justify-content: center;
+    align-items: center;
+    transition: 0.5s;
+}
+
+    .redbutton:hover {
+        background: #badecd;
+        color: #f0f4e6;
+        border: 2px solid #badecd;
+    }
+
+    .greenbutton {
+    color: white;
+    width: 3em;
+    height: 3em;
+    border-radius: 50%;
+    background: #badecd;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
+    border: 2px solid #badecd;
+    justify-content: center;
+    align-items: center;
+    transition: 0.5s;
+}
+
+    .greenbutton:hover {
+        background: hsl(350, 98%, 50%);
+        color: #f0f4e6;
+        border: 2px solid hsl(350, 98%, 50%);
+    }
+
+
+footer {
+    margin-top: 2px;
+    padding-top: 80px;
+    padding-bottom: 2px;
+}
+
+.icon-bar {
+    background-color: #fff;
+}
+
+.accountform {
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.badge {
+    background-color: black;
+    color:white;
+    padding-right: 3px;
+    padding-left: 3px;
+    -webkit-border-radius: 9px;
+    -moz-border-radius: 9px;
+    border-radius: 9px;
+}
+
+
+.label-warning[href],
+.badge-warning[href] {
+    background-color: #badecd;
+    color: white;
+}
+
+.product {
+    background-size: contain;
+    background-position: center center;
+    background-repeat: no-repeat;
+    width: 150px;
+    height: 150px;
+    margin: 0 auto;
+}
+
+caption p {
+    word-wrap: break-word;
+}
+
+.row.row-flex {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 1px;
+}
+
+.card-default {
+    border-color: 1px #f0f4e6;
+    padding: 0 7px;
+}
+
+.card-body {
+    height: 100%;
+    border: 2px solid transparent;
+}
+
+.product-description {
+    min-height: 40px;
+}

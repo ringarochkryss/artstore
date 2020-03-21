@@ -4,9 +4,60 @@
 [![Build Status](https://travis-ci.org/ringarochkryss/artstore.svg?branch=master)](https://travis-ci.org/ringarochkryss/artstore)
 
 # The Art Store 
+ A Django app is a self-contained package that should only do one thing
+ citat: https://www.softkraft.co/7-common-mistakes-that-django-developers-make/
 
-This site has a web shop for art and a calendar with exhibitions. 
- 
+
+The calendar -thankyou Alexandre Pinte
+link: https://alexpnt.github.io/2017/07/15/django-calendar/
+
+This site has a web shop for art and a calendar with exhibitions.
+
+Virtual environment:
+$ wget https://bootstrap.pypa.io/get-pip.py
+$ sudo python get-pip.py
+$ sudo pip install virtualenv
+$ virtualenv venv
+$ source venv/bin/activate
+
+Install packages to the virtual environment:
+pip3 install -r requirements.txt
+
+When ever changes or additions to the database:
+$ python3 manage.py makemigrations
+$ python3 manage.py migrate
+$ python3 manage.py runserver
+
+Changes to static -collect static
+$ python3 manage.py collectstatic
+
+Changes: 
+python3 manage.py migrate --run-syncdb
+
+I installed a app to clear cache -as this was a problem:
+Now I can type this to clear my cache:
+$ python3 manage.py clear_cache
+
+The app is installed like this: 
+pip3 install django-clear-cache
+To install django-clear-cache, simply run pip install django-clear-cache and you'll get the latest version installed automatically.
+
+Next, modify your Django settings.py file, and add clear_cache to your INSTALLED_APPS setting:
+
+INSTALLED_APPS = (
+    # ...
+    'clear_cache',
+)
+
+To clear your cache, simply run the clear_cache management command:
+
+$ python3 manage.py clear_cache
+Your cache has been cleared!
+NOTE: This will only (obviously) work if you've got a cache configured (eg: memcached, local memory, etc.). If you have no idea what I'm talking about, read through the official Django caching docs.
+Source: https://github.com/rdegges/django-clear-cache
+
+
+
 ## UX
  
 Use this section to provide insight into your UX process, focusing on who this website is for, what it is that they want to achieve and how your project is the best way to help them achieve these things.
