@@ -19,7 +19,9 @@ from accounts import urls as urls_accounts
 from cart import urls as urls_cart
 from search import urls as urls_search
 from products import urls as urls_products
+from exhibit import urls as urls_events
 from checkout import urls as urls_checkout
+from exhibit.views import all_events
 from products.views import all_products
 from django.views import static
 from .settings import MEDIA_ROOT
@@ -33,5 +35,6 @@ urlpatterns = [
     url(r'^search/', include(urls_search)),
     url(r'^checkout/', include(urls_checkout)),
     url(r'^products/', include(urls_products)),
+    url(r'^exhibit/', include(urls_events)),
     url(r'^media/(?P<path>.*)$', static.serve, {'document_root': MEDIA_ROOT})
 ]
