@@ -51,15 +51,15 @@
   <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
     <ul class="navbar-nav mr-auto mt-auto text-center">
       <li class="nav-item active navbutton">
-        <a class="nav-link active buttontext" href="{% url 'products' %}">Home<h3><i class="fas fa-home"></i></h3><span class="sr-only">(current)</span></a>
+        <a class="nav-link buttontext" href="{% url 'products' %}">Art<h3><i class="fab fa-sketch"></i></h3><span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item active navbutton">
-        <a class="nav-link buttontext" href="#">About
-        <h3><i class="fas fa-dungeon"></i></h3></a>
+        <a class="nav-link buttontext" href="#">Exhibit
+        <h3><i class="fas fa-chalkboard-teacher"></i></h3></a>
       </li>
       <li class="nav-item active navbutton">
-        <a href="{% url 'admin:index' %}">Calendar</a>
-        <h3><i class="fas fa-calendar"></i></h3></a>
+        <a class="nav-link buttontext" href="{% url 'admin:index' %}">Admin
+        <h3><i class="fas fa-user-lock"></i></h3></a>
       </li>
       {% if user.is_authenticated %}
       <li class="nav-item active navbutton">
