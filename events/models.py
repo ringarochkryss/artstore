@@ -5,11 +5,10 @@ from django.core.urlresolvers import reverse
 
 
 class calendarcontent(models.Model):
-    exhibition = models.TextField(u'Exhibition', help_text=u'Exhibition', blank=True, null=True)
+    event = models.TextField(u'Name', help_text=u'Name', blank=True, null=True)
 
 
 class Event(models.Model):
-    exhibition = models.TextField(u'Exhibition', help_text=u'Exhibition', blank=True, null=True)
     artist = models.TextField(u'Artist', help_text=u'Artist', blank=True, null=True)
     notes = models.TextField(u'Notes', help_text=u'Notes', blank=True, null=True)
     day = models.DateField(u'Day of the event', help_text=u'Day of the event')

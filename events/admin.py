@@ -10,7 +10,7 @@ from .utils import EventCalendar
 
 
 class EventAdmin(admin.ModelAdmin):
-    list_display = ['exhibition', 'artist', 'notes', 'day', 'start_time', 'end_time', 'hall']
+    list_display = ['artist', 'notes', 'day', 'start_time', 'end_time', 'hall']
     change_list_template = 'admin/events/change_list.html'
 
     def changelist_view(self, request, extra_context=None):
