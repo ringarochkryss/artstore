@@ -15,6 +15,10 @@ class Event(models.Model):
     start_time = models.TimeField(u'Starting time', help_text=u'Starting time')
     end_time = models.TimeField(u'Final time', help_text=u'Final time')
     hall = models.TextField(u'Hall', help_text=u'Hall', blank=True, null=True)
+    image = models.ImageField(upload_to='images')
+
+    def __str__(self):
+        return self.notes
 
     class Meta:
         verbose_name = u'Scheduling'

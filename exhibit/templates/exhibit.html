@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="row row-flex">
+Hallå hallå hallå!!!
+    {% for event in events %}
+
+    {{ events.hall }}
+
+        <div class="col-xs-10 col-xs-offset-1 col-sm-offset-0 col-sm-6 col-md-4 display card card-default">
+            <div>
+                <p class="product-artistname">hall {{ event.hall }}</p> 
+                <div class="something" style="background-image: url('{{ MEDIA_URL }}{{ events.image }}')"></div>
+
+            </div>
+
+        </div>
+    {% endfor %}
+    
+</div>
+
+{% endblock %}
