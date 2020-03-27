@@ -140,9 +140,9 @@ font-family: 'Montserrat', sans-serif;
 }
 
     .redbutton:hover {
-        background: #badecd;
-        color: #f0f4e6;
-        border: 2px solid #badecd;
+        background: black;
+        color: white;
+        border: 2px solid hsl(350, 98%, 50%);
     }
 
     .greenbutton {
@@ -150,9 +150,9 @@ font-family: 'Montserrat', sans-serif;
     width: 3em;
     height: 3em;
     border-radius: 50%;
-    background: #badecd;
+    background: #428667;
     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
-    border: 2px solid #badecd;
+    border: 2px solid #428667;
     justify-content: center;
     align-items: center;
     transition: 0.5s;
@@ -160,7 +160,7 @@ font-family: 'Montserrat', sans-serif;
 
     .greenbutton:hover {
         background: hsl(350, 98%, 50%);
-        color: #f0f4e6;
+        color: #428667;
         border: 2px solid hsl(350, 98%, 50%);
     }
 
@@ -228,4 +228,10 @@ caption p {
 
 .product-description {
     min-height: 40px;
+}
+
+.carouselbox {
+    background: hsl(350, 98%, 50%);
+    color: white;
+    border: 2px dotted solid hsl(350, 98%, 50%);
 }
