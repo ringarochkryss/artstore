@@ -28,6 +28,10 @@ from django.views import static
 from .settings import MEDIA_ROOT
 
 
+admin.site.site_header = 'Art Store Administration'       # default: "Django Administration"
+admin.site.index_title = 'Welcome! Here you can add products for the store or schedule events.' # default: "Site administration"
+admin.site.site_title = 'Art Store Administration' # default: "Django site admin"
+
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', all_products, name='index'),
@@ -42,3 +46,4 @@ urlpatterns = [
     url(r'^exhibit/', include(urls_exhibit)),
     url(r'^media/(?P<path>.*)$', static.serve, {'document_root': MEDIA_ROOT})
 ]
+

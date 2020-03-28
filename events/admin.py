@@ -8,6 +8,7 @@ from calendar import HTMLCalendar
 from django.utils.safestring import mark_safe
 from .utils import EventCalendar
 
+admin.site.site_header = 'My administration'
 
 class EventAdmin(admin.ModelAdmin):
     list_display = ['artist', 'notes', 'day', 'start_time', 'end_time', 'hall']

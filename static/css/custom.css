@@ -106,10 +106,10 @@ font-family: 'Montserrat', sans-serif;
     }
 
 .longbutton {
-    color: #f0f4e6;
+    color: #fff;
     width: 8em;
     height: 3em;
-    background:  hsl(350, 98%, 50%);
+    background: #428667;;
     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
     border: 2px solid   hsl(350, 98%, 50%);
     margin-right: 2px;

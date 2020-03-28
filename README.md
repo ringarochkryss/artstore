@@ -71,6 +71,38 @@ Then commit your changes:
 
 git commit -m "Untrack files in .gitignore"
 
+
+Change the styling of the admin site:
+This solution will work for the admin site, I think it's the cleanest way because it overrides base_site.html which doesn't change when upgrading django.
+
+Create in your templates directory a folder called admin in it create a file named base_site.html.
+
+Create in your static directory under css a file called admin-extra.css .
+
+Write in it all the custom css you want for your forms like: body{background: #000;}.
+
+Paste this in the base_site.html:
+
+{% extends "admin/base.html" %}
+{% load static from staticfiles %} # This might be just {% load static %} in your ENV
+
+{% block title %}{{ title }} | {{ site_title|default:_('Django site admin') }}{% endblock %}
+
+{% block extrastyle %}{{ block.super }}<link rel="stylesheet" type="text/css" href="{% static "css/admin-extra.css" %}" />{% endblock %}
+
+{% block branding %}
+<h1 id="site-name"><a href="{% url 'admin:index' %}">{{ site_header|default:_('Django administration') }}</a></h1>
+{% endblock %}
+
+{% block nav-global %}{% endblock %}
+As mentioned in the comments: make sure your app is before the admin app in INSTALLED_APPS, otherwise your template doesn't override django's
+
+That's It! you're done   elad silver Stack overflow link to him: https://stackoverflow.com/users/1807569/elad-silver
+
+Here is the origin css 
+https://raw.githubusercontent.com/django/django/master/django/contrib/admin/static/admin/css/base.css
+
+
 ## UX
  
 Use this section to provide insight into your UX process, focusing on who this website is for, what it is that they want to achieve and how your project is the best way to help them achieve these things.

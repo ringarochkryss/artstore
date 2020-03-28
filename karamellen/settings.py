@@ -32,6 +32,7 @@ ALLOWED_HOSTS = [os.environ.get('C9_HOSTNAME'),
                  'petrasartstore.herokuapp.com']
 
 INSTALLED_APPS = [
+    'events',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -44,7 +45,6 @@ INSTALLED_APPS = [
     'cart',
     'checkout',
     'storages',
-    'events',
     'exhibit',
     'clear_cache'
     # 'karamellen', should not be mentioned here
