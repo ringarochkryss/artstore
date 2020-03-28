@@ -109,9 +109,9 @@ font-family: 'Montserrat', sans-serif;
     color: #f0f4e6;
     width: 8em;
     height: 3em;
-    background: #badecd;
+    background:  hsl(350, 98%, 50%);
     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
-    border: 2px solid  #badecd;
+    border: 2px solid   hsl(350, 98%, 50%);
     margin-right: 2px;
     justify-content: center;
     align-items: center;
@@ -239,8 +239,20 @@ caption p {
     min-height: 40px;
 }
 
-.carouselbox {
+.carouselboxblack {
+    background: black;
+    color:  white;
+
+}
+
+.carouselboxred {
     background: hsl(350, 98%, 50%);
-    color: white;
-    border: 2px dotted solid hsl(350, 98%, 50%);
+    color:  white;
+
+}
+
+
+.iconlargeandred {
+    font-size: 150px; 
+    color: hsl(350, 98%, 50%);
 }
