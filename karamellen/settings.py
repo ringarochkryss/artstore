@@ -74,7 +74,8 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
                 'django.template.context_processors.media',
-                'cart.contexts.cart_contents'
+                'cart.contexts.cart_contents',
+                'django.template.context_processors.static'
             ],
         },
     },
@@ -150,7 +151,7 @@ AWS_S3_OBJECT_PARAMETERS = {
 }
 
 AWS_STORAGE_BUCKET_NAME = 'petrasartstore'
-AWS_S3_REGION_NAME = 'eu-west-1'
+AWS_S3_REGION_NAME = 'eu-north-1'
 AWS_ACCESS_KEY_ID = os.environ.get("AWS_SECRET_KEY_ID")
 AWS_SECRET_ACCESS_KEY = os.environ.get("AWS_SECRET_ACCESS_KEY")
 
