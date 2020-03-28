@@ -31,6 +31,9 @@ $ python3 manage.py runserver
 Changes to static -collect static
 $ python3 manage.py collectstatic
 
+pip3 freeze --local > requirements.txt
+this will update your req.txt file
+
 Changes: 
 python3 manage.py migrate --run-syncdb
 
