@@ -161,6 +161,8 @@ AWS_DEFAULT_ACL = None
 STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 # STATICFILES_LOCATION = 'static'
 # STATICFILES_STORAGE = 'custom_storages.StaticStorage'
+STATICFILES_LOCATION = "static"
+STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = (
