@@ -33,7 +33,7 @@ $ python3 manage.py collectstatic
 
 pip3 freeze --local > requirements.txt
 this will update your req.txt file
-
+python3 manage.py makemigrations
 Changes: 
 python3 manage.py migrate --run-syncdb
 
