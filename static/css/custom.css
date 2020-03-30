@@ -145,6 +145,26 @@ font-family: 'Montserrat', sans-serif;
         border: 2px solid hsl(350, 98%, 50%);
     }
 
+     .redbuttonlarge {
+    color: white;
+    width: 5em;
+    height: 5em;
+    border-radius: 50%;
+    background: hsl(350, 98%, 50%);
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
+    border: 2px solid hsl(350, 98%, 50%);
+    margin-right: 2px;
+    justify-content: center;
+    align-items: center;
+    transition: 0.5s;
+}
+
+    .redbuttonlarge:hover {
+        background: black;
+        color: white;
+        border: 2px solid hsl(350, 98%, 50%);
+    }
+
     .greenbutton {
     color: white;
     width: 3em;

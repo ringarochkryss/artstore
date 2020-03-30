@@ -30,6 +30,7 @@ $ python3 manage.py runserver
 
 Changes to static -collect static
 $ python3 manage.py collectstatic
+and type yes
 
 pip3 freeze --local > requirements.txt
 this will update your req.txt file

@@ -18,8 +18,8 @@ class Gallery(models.Model):
 
 
 class GalleryArtist(models.Model):
-    artistname = models.CharField(max_length=254, default='')
-    techniques = models.CharField(max_length=254, default='')
+    artistname = models.CharField(max_length=254, default='Elin')
+    techniques = models.CharField(max_length=254, default='Lin')
     about = models.TextField()
     image = models.ImageField(upload_to='images')
     
@@ -33,7 +33,7 @@ class GalleryArtist(models.Model):
 class GalleryArt(models.Model):
     artistname = models.ForeignKey(GalleryArtist, default=1, verbose_name="ArtinGallery", on_delete=models.SET_DEFAULT)
     galleryname = models.ForeignKey(Gallery, default=1, verbose_name="Galleries", on_delete=models.SET_DEFAULT)
-    techniques = models.CharField(max_length=254, default='')
+    techniques = models.CharField(max_length=254, default='lin')
     image = models.ImageField(upload_to='images')
     
     class Meta:

@@ -23,6 +23,9 @@ from events import urls as urls_events
 from exhibit import urls as urls_exhibit
 from checkout import urls as urls_checkout
 from events.views import all_events
+from exhibit.views import all_galleries
+from exhibit.views import all_galleryart
+from exhibit.views import all_galleryartists
 from products.views import all_products
 from django.views import static
 from .settings import MEDIA_ROOT
@@ -36,9 +39,12 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', all_products, name='index'),
     url(r'^$', all_events, name='events'),
+    url(r'^$', all_galleries, name='galleries'),
+    url(r'^galleries$', all_galleries, name='galleries'),
+    url(r'^galleryart$', all_galleryart, name='galleryart'),
+    url(r'^galleryartists$', all_galleryartists, name='galleryartists'),
     url(r'^accounts/', include(urls_accounts)),
     url(r'^cart/', include(urls_cart)),
-    url(r'^exhibition/', include(urls_exhibit)),
     url(r'^search/', include(urls_search)),
     url(r'^checkout/', include(urls_checkout)),
     url(r'^products/', include(urls_products)),

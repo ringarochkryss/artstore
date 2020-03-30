@@ -1,17 +1,21 @@
 from django.shortcuts import render, redirect, reverse
-from events.models import Event
+from .models import Gallery, GalleryArt, GalleryArtist
 
 
-def view_exhibitions(request):
-    """A View that renders the exhibition contents page"""
-    return render(request, "exhibit.html")
+# return all galleries in the database.
+def all_galleries(request):
+    galleries = Gallery.objects.all()
+    return render(request, "exhibit.html", {"galleries":galleries})
 
-# return all events in the database.
-def all_events(request):
-    events = Event.objects.all()
-    return render(request, "exhibit.html")
+def all_galleryartists(request):
+    galleryartists = Gallery.objects.all()
+    return render(request, "galleryartists.html", {"galleryartists":galleryartists})
 
-def view_event(request):
+def all_galleryart(request):
+    galleryart = Gallery.objects.all()
+    return render(request, "galleryart.html", {"galleryart":galleryart})
+
+def view_exhibit(request):
     """A View that renders the exhibit contents page"""
     return render(request, "exhibit.html")
     

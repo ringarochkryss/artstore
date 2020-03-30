@@ -1,9 +1,10 @@
 from django.conf.urls import url, include
-from .views import all_events, view_exhibitions, view_event
+from .views import all_galleries, all_galleryart, all_galleryartists, view_exhibit
 
 
 urlpatterns = [
-    url(r'^$', view_exhibitions, name='view_exhibitions'),
-    url(r'^$', all_events, name='events'),
-    url(r'^$', view_event, name='view_event'),
+    url(r'^galleries$', all_galleries, name='galleries'),
+    url(r'^galleryart$', all_galleryart, name='galleryart'),
+    url(r'^galleryartists$', all_galleryartists, name='galleryartists'),
+    url(r'^$', view_exhibit, name='exhibit'),
 ]
