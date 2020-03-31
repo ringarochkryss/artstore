@@ -18,4 +18,8 @@ script:
 branches:
   only:
     - master
-before_install: gem install bundler --pre
+language: ruby
+install:
+  - gem uninstall bundler
+  - gem install bundler --version '1.7.4'
+script: "rake"
