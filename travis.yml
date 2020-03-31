@@ -14,3 +14,7 @@ install:
 # command to run tests
 script:
   - pytest
+# whitelist
+branches:
+  only:
+    - master
