@@ -260,15 +260,14 @@ caption p {
 }
 
 .carouselboxblack {
-    background: black;
+   background-image: linear-gradient(rgb(43, 44, 43), white);
     color:  white;
 
 }
 
 .carouselboxred {
-    background: hsl(350, 98%, 50%);
     color:  white;
-
+    background-image: linear-gradient(#fc032c, white);
 }
 
 
