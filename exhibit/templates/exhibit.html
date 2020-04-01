@@ -22,8 +22,8 @@
                 </div>
     {% for item in galleries %}
                 <div class="carousel-item  carouselboxblack justify-content-center text-center">
-                    <h3 class = "mt-2">{{ item.galleryname }}</h3>
-                    <div class="exhibitionimage" style="background-image: url('{{ MEDIA_URL }}{{ item.galleryimage  }}')"></div>
+                    <h3 class = "mt-2">{{item.galleryname}}</h3>
+                    <div class="exhibitionimage" style="background-image: url('{{ MEDIA_URL }}{{item.galleryimage}}')"></div>
                     <p class="text-dark">Address: {{item.adress}}  Open: {{item.openinghours}} </p>
                 </div>
     {% endfor %}
@@ -39,6 +39,5 @@
         </div>
     </div>
 </div>
-
 
 {% endblock %}
