@@ -21,7 +21,7 @@ class GalleryArtist(models.Model):
     artistname = models.CharField(max_length=254, default='Elin')
     techniques = models.CharField(max_length=254, default='Lin')
     about = models.TextField()
-    image = models.ImageField(upload_to='images')
+    artistimage = models.ImageField(upload_to='images')
     
     class Meta:
         # Gives the proper plural name for admin
@@ -32,7 +32,7 @@ class GalleryArtist(models.Model):
 
 class GalleryArt(models.Model):
     artname = models.CharField(max_length=254, default='Artname')
-    artistname = models.ForeignKey(GalleryArtist, default=1, verbose_name="Artist_Name", on_delete=models.SET_DEFAULT)
+    artistname = models.ForeignKey(GalleryArtist, default=1, verbose_name="Artists", on_delete=models.SET_DEFAULT)
     galleryname = models.ForeignKey(Gallery, default=1, verbose_name="Galleries", on_delete=models.SET_DEFAULT)
     techniques = models.CharField(max_length=254, default='lin')
     artimage = models.ImageField(upload_to='images')
@@ -42,4 +42,4 @@ class GalleryArt(models.Model):
         verbose_name_plural = "Art"
 
     def __str__(self):
-        return self.artname, artimage, artistname
+        return self.artname

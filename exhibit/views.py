@@ -8,11 +8,11 @@ def all_galleries(request):
     return render(request, "exhibit.html", {"galleries":galleries})
 
 def all_galleryartists(request):
-    galleryartists = Gallery.objects.all()
+    galleryartists = GalleryArtist.objects.all()
     return render(request, "galleryartists.html", {"galleryartists":galleryartists})
 
 def all_galleryart(request):
-    galleryart = Gallery.objects.all()
+    galleryart = GalleryArt.objects.all()
     return render(request, "galleryart.html", {"galleryart":galleryart})
 
 def view_exhibit(request):
