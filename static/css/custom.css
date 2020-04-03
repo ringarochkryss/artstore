@@ -235,6 +235,25 @@ footer {
     margin: 0 auto;
 }
 
+.artimage {
+    background-size: contain;
+    background-position: center center;
+    background-repeat: no-repeat;
+    width: 350px;
+    height: 350px;
+    margin: 0 auto;
+}
+
+.artistimage {
+    background-size: contain;
+    background-position: center center;
+    background-repeat: no-repeat;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    margin: 0 auto;
+}
+
 caption p {
     word-wrap: break-word;
 }
@@ -262,16 +281,48 @@ caption p {
 .carouselboxblack {
    background-image: linear-gradient(rgb(43, 44, 43), white);
     color:  white;
-
+    height: 100%;
 }
 
 .carouselboxred {
     color:  white;
     background-image: linear-gradient(#fc032c, white);
+    height: 100%;
+}
+
+.carouselboxyellow {
+   background-image: linear-gradient(rgb(240, 225, 13), white);
+    color:  #fc032c;
+    height: 100%;
+}
+
+.carouselboxgreen{
+   background-image: linear-gradient(rgba(89, 196, 112, 0.644), white);
+    color:  black;
+    height: 100%;
 }
 
 
 .iconlargeandred {
     font-size: 150px; 
     color: hsl(350, 98%, 50%);
+}
+/*https://www.w3schools.com/howto/howto_css_zoom_hover.asp*/
+.zoom {
+  transition: transform .2s; /* Animation */
+  margin: 0 auto;
+}
+
+.zoom:hover {
+  transform: scale(1.5); /* (150% zoom) */
+  z-index: 100; 
+}
+.carousel-control-prev-icon {
+background-color: black;
+border-radius: 50%;
+}
+
+.carousel-control-next-icon {
+background-color: black;
+border-radius: 50%;
 }

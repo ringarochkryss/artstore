@@ -3,16 +3,16 @@
 
 <div class="row row-flex d-flex justify-content-center align-items-center">
 <!--..Exhibit Navigation.................................................................................-->
-<div class="justify-content-center align-items-center mb-3 col-12 col-md-2 btn-group-vertical mb-1">
-  <a class= "btn redbutton" href="{% url 'galleries' %}">Galleries</a>
-  <a class="btn redbutton" href="{% url 'galleryart' %}">Art</a>
-  <a class="btn redbutton" href="{% url 'galleryartists' %}">Artists</a>
+<div class="justify-content-center align-items-center mb-3 col-10 col-md-1 btn-group-vertical mb-1">
+  <a class= "btn redbutton buttontextsm" href="{% url 'galleries' %}">Exhibit</a>
+  <a class="btn redbutton buttontextsm" href="{% url 'galleryart' %}">Art</a>
+  <a class="btn redbutton buttontextsm" href="{% url 'galleryartists' %}">Artists</a>
 </div>
 
 
 <!--..Galleries Carousel.................................................................................-->
-<div class="justify-content-center align-items-center col-12 col-md-10">
-   <div id="allthegalleries" class="carousel slide col-12 col-md-10 col-md-offset-2 d-flex justify-content-center align-items-center" data-ride="carousel">
+<div class="justify-content-center align-items-center col-12 col-md-11">
+   <div id="allthegalleries" class="zoom carousel slide col-12 col-md-10 col-md-offset-2 d-flex justify-content-center align-items-center" data-ride="carousel">
         <div class="carousel-inner d-block">
                 <div class="carousel-item active carouselboxred justify-content-center text-center">
                     <p class="mb-1">It's critical times for the galleries</p></br>
@@ -21,9 +21,9 @@
                     <p class="text-dark">Bring the art home!</p>
                 </div>
     {% for item in galleries %}
-                <div class="carousel-item  carouselboxblack justify-content-center text-center">
+                <div class="carousel-item  carouselboxyellow text-dark justify-content-center text-center">
                     <h3 class = "mt-2">{{item.galleryname}}</h3>
-                    <div class="exhibitionimage" style="background-image: url('{{ MEDIA_URL }}{{item.galleryimage}}')"></div>
+                    <div class="exhibitionimage zoom" style="background-image: url('{{ MEDIA_URL }}{{item.galleryimage}}')"></div>
                     <p class="text-dark">Address: {{item.adress}}  Open: {{item.openinghours}} </p>
                 </div>
     {% endfor %}
