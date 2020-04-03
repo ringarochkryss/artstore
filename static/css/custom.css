@@ -179,8 +179,8 @@ font-family: 'Montserrat', sans-serif;
 }
 
     .greenbutton:hover {
-        background: hsl(350, 98%, 50%);
-        color: #428667;
+        background: black;
+        color: white;
         border: 2px solid black;
     }
 

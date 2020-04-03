@@ -39,9 +39,8 @@
                     <div class="form-group">
                         <label for="exampleInputAmount" class="sr-only">New Qty</label>
                         <div class="input-group">
-                            <div class="input-group-addon my-3 mr-1">Qty</div>
-                            <input name="quantity" type="number" min="0" max="999" class="form-control my-3">
-                            <button type="submit" class="btn greenbutton mx-3 my-2 buttontext"><span aria-hidden="true"></span><i class="fas fa-redo"></i>
+                            <input name="quantity" type="number" min="0" max="999" class="form-control mt-1" placeholder="Qty">
+                            <button type="submit" class="btn greenbutton mx-3 buttontext"><span aria-hidden="true"></span><i class="fas fa-redo"></i>
                             </button>
                         </div>
                     </div> 
@@ -58,8 +57,9 @@
         <h3 class="mt-4"><span aria-hidden="true"></span> <strong> {{ total }} </strong><i class="fas fa-euro-sign"></i></h3>
     </div>
 <!-- Payment form-->
-
+<hr>
 <form role="form" method="post" id="payment-form" action="{% url 'checkout' %}">
+
     <legend>Payment Details</legend>
 
     <div id="credit-card-errors" style="display: none;">
