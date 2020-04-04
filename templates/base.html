@@ -115,25 +115,45 @@ $('.carousel').carousel()
 $('.alert').alert()
 
 
-//..API RADIO- OLD SCHOOL JS WAY with httpRequest............................................................
-//Reference https://www.taniarascia.com/how-to-connect-to-an-api-with-javascript/
-// https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch
+//..API RADIO............................................................
 
-  /*$("button").click(function(){
-    $.ajax({url: 'https://api.sr.se/api/v2/programs/index?channelid=164&programcategoryid=14', success: function(result){
-      $("#div1").html(result);
-    }});
-  });*/
  
-var xhttp = new XMLHttpRequest();
+/*var xhttp = new XMLHttpRequest();
 xhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
        //  when the document is ready:
        document.getElementById("result").innerHTML = xhttp.responseText;
     }
 };
-xhttp.open("GET", 'https://api.sr.se/api/v2/programs/index?channelid=164&programcategoryid=14', true);
+xhttp.open("GET", 'https://api.sr.se/api/v2/episodes/getlatest?programid=5053', true);
 xhttp.send();
+*/
+function loadDoc() {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      myFunction(this);
+    }
+  };
+  xhttp.open("GET", 'https://api.sr.se/api/v2/episodes/getlatest?programid=5053', true);
+  xhttp.send();
+}
+
+function myFunction(xml) {
+  var i;
+  var xmlDoc = xml.responseXML;
+  var table="<tr><th>Title</th><th>Description</th></tr>";
+  var x = xmlDoc.getElementsByTagName("episode");
+  for (i = 0; i <x.length; i++) { 
+    table += "<tr><td>" +
+    x[i].getElementsByTagName("title")[0].childNodes[0].nodeValue +
+    "</td><td>" +
+    x[i].getElementsByTagName("description")[0].childNodes[0].nodeValue +
+    "</td></tr>";
+  }
+  document.getElementById("radiotable").innerHTML = table;
+}
+
 
 </script>
 
