@@ -31,7 +31,7 @@
       <tr>
         <td class="align-middle"><div class="product" style="background-image: url('{{ MEDIA_URL }}{{ item.product.image }}')"></div></td>
         <td class="align-middle">Name: {{item.product.name}} </br>Artist: {{ item.product.artistname }} </td>
-        <td class="align-middle">{{ item.product.price }} <i class="fas fa-euro-sign"></i> </td>
+        <td class="align-middle">{{ item.product.price }} €</td>
         <td class="align-middle"><strong>{{ item.quantity }}</strong></td>
         <td class="align-middle"> 
                 <form class="form-inline" method="post" action="{% url 'adjust_cart' item.id %}">

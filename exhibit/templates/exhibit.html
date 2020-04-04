@@ -3,22 +3,33 @@
 
 <div class="row row-flex d-flex justify-content-center align-items-center">
 <!--..Exhibit Navigation.................................................................................-->
-<div class="justify-content-center align-items-center mb-3 col-10 col-md-1 btn-group-vertical mb-1">
+<div class="justify-content-center align-items-center mb-3 col-12 col-md-1 btn-group-vertical mb-1">
   <a class= "btn longbutton buttontextsm" href="{% url 'galleries' %}">Exhibit</a>
   <a class="btn longbutton buttontextsm" href="{% url 'galleryart' %}">Art</a>
   <a class="btn longbutton buttontextsm" href="{% url 'galleryartists' %}">Artists</a>
 </div>
 
 
+
+
+<!--..API LAB.................................................................................-->
+<div id="result"><p></p></div>
+<div id="div1"><p>Let jQuery AJAX Change This Text</p></div>
+
+<button>Get External Content</button>
+
+
+
+
 <!--..Galleries Carousel.................................................................................-->
 <div class="justify-content-center align-items-center col-12 col-md-11">
-   <div id="allthegalleries" class="zoom carousel slide col-12 col-md-10 col-md-offset-2 d-flex justify-content-center align-items-center" data-ride="carousel">
+   <div id="allthegalleries" class="zoom carousel slide col-12 col-md-10 d-flex justify-content-center align-items-center" data-ride="carousel">
         <div class="carousel-inner d-block">
                 <div class="carousel-item active carouselboxred justify-content-center text-center">
-                    <p class="mb-1">It's critical times for the galleries</p></br>
+                    <p class="mb-1"></p></br>
                     <h3 class = "mt-2"> </h3>
                     <div class="exhibitionimage"></br><h3>SUPPORT YOUR LOCAL GALLERY</h3></div>
-                    <p class="text-dark">Bring the art home!</p>
+                    <p class="text-dark"></p>
                 </div>
     {% for item in galleries %}
                 <div class="carousel-item  carouselboxyellow text-dark justify-content-center text-center">

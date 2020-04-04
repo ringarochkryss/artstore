@@ -13,7 +13,7 @@
              <div class="caption">
                 <h3>{{ item.product.name }}</h3>
                 <p class="product-description">{{ item.product.description }}</p>
-                <p>{{ item.product.price }}</p>
+                <p>{{ item.product.price }} €</p>
             </div>
             <div class="card-footer">   
                 <form class="form-inline" method="post" action="{% url 'adjust_cart' item.id %}">
@@ -36,7 +36,7 @@
 <!--Total cost of cart-->
 <div class="row justify-content-end">
         <p class="mt-4 mx-1">Total </p>
-        <p class="mt-4"><span aria-hidden="true"></span>{{ total }}<i class="fas fa-euro-sign"></i></p>
+        <p class="mt-4"><span aria-hidden="true"></span>{{ total }} €</p>
         <a href="{% url 'checkout' %}" class="btn longbutton ml-3 my-2 buttontext" role="button"><span class="buttontext" aria-hidden="true"></span>Check out</a>
 </div>
 

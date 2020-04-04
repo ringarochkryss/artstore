@@ -9,7 +9,7 @@
 
                 <h3>{{ product.name }}</h3>
                 <p class="product-description">{{ product.description }}</p>
-                <p>{{ product.price }}</p>
+                <p>{{ product.price }} €</p>
             </div>
             <div class="card-footer">
                 <form class="mb-2" method="post" action="{% url 'add_to_cart' product.id %}">
