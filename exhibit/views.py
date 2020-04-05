@@ -5,7 +5,7 @@ from .models import Gallery, GalleryArt, GalleryArtist
 # return all galleries in the database.
 def all_galleries(request):
     galleries = Gallery.objects.all()
-    return render(request, "exhibit.html", {"galleries":galleries})
+    return render(request, "gallery.html", {"galleries":galleries})
 
 def all_galleryartists(request):
     galleryartists = GalleryArtist.objects.all()
