@@ -116,18 +116,8 @@ $('.alert').alert()
 
 
 //..API RADIO............................................................
+// https://www.w3schools.com/xml/tryit.asp?filename=tryajax_xml2
 
- 
-/*var xhttp = new XMLHttpRequest();
-xhttp.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) {
-       //  when the document is ready:
-       document.getElementById("result").innerHTML = xhttp.responseText;
-    }
-};
-xhttp.open("GET", 'https://api.sr.se/api/v2/episodes/getlatest?programid=5053', true);
-xhttp.send();
-*/
 function loadDoc() {
   var xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function() {
@@ -142,10 +132,14 @@ function loadDoc() {
 function myFunction(xml) {
   var i;
   var xmlDoc = xml.responseXML;
-  var table="<tr><th>Title</th><th>Description</th></tr>";
+  var table="<tr><th>Imageurl</th><th>Title</th><th>Description</th></tr>";
   var x = xmlDoc.getElementsByTagName("episode");
   for (i = 0; i <x.length; i++) { 
-    table += "<tr><td>" +
+    table += 
+    "</td><td><img src='" + 
+    x[i].getElementsByTagName("imageurl")[0].childNodes[0].nodeValue +
+     "'/></td></tr>";
+    "<tr><td>" +
     x[i].getElementsByTagName("title")[0].childNodes[0].nodeValue +
     "</td><td>" +
     x[i].getElementsByTagName("description")[0].childNodes[0].nodeValue +
@@ -154,6 +148,42 @@ function myFunction(xml) {
   document.getElementById("radiotable").innerHTML = table;
 }
 
+
+
+
+//......................................................................
+
+//AJAX JQUERY-VERSION
+//https://stackoverflow.com/questions/16986440/get-image-source-from-xml-and-load-it-using-javascript
+/*
+$(function() 
+{ 
+$.ajax(
+{
+    type: "GET",
+    url: "https://api.sr.se/api/v2/episodes/getlatest?programid=5053",
+    dataType: "xml",
+    success: function(xml) 
+    {
+
+        $(xml).find('episode').each(function() 
+        {
+            var url = $(this).find('url').text();
+            var title = $(this).find('title').text();
+            var description = $(this).find('description').text();
+            var image = $(this).find("imageurl[href]").attr("href");
+            $('<a></a>').html(url).appendTo('#radionews');
+            $('<p></p>').html(title).appendTo('#radionews');
+            $('<p></p>').html(description).appendTo('#radionews');
+            $('<div></div>').html(image).appendTo('#radioimage');
+        });
+    }
+});
+});*/
+
+
+
+  
 
 </script>
 
