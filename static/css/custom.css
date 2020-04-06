@@ -25,7 +25,7 @@ body {
 }
 
 .bottomnavbarbackground {
-    background-color:  hsl(350, 98%, 50%);
+    background-color:  rgb(10, 10, 10, .8);
 }
 
 
@@ -176,18 +176,18 @@ buttontextdrop {
     width: 3em;
     height: 3em;
     border-radius: 50%;
-    background: #428667;
+    background:black;
     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
-    border: 2px solid #428667;
+    border: 2px solid black;
     justify-content: center;
     align-items: center;
     transition: 0.5s;
 }
 
     .greenbutton:hover {
-        background: black;
+        background: #428667;
         color: white;
-        border: 2px solid black;
+        border: 2px solid #428667;
     }
 
 
