@@ -71,6 +71,12 @@ font-family: 'Montserrat', sans-serif;
     color: white;
 }
 
+buttontextdrop {
+    font-family: 'Julius Sans One', sans-serif;
+    font-size: 15px;
+    color: black;
+}
+
 .buttontextsm {
     font-family: 'Julius Sans One', sans-serif;
     font-size: 12px;
@@ -278,30 +284,14 @@ caption p {
     min-height: 40px;
 }
 
-.carouselboxblack {
-   background-image: linear-gradient(rgb(43, 44, 43), white);
-    color:  white;
-    height: 100%;
-}
-
-.carouselboxred {
-    color:  white;
-    background-image: linear-gradient(#fc032c, white);
-    height: 100%;
-}
-
-.carouselboxyellow {
-   background-image: linear-gradient(rgb(240, 225, 13), white);
-    color:  #fc032c;
-    height: 100%;
-}
-
-.carouselboxgreen{
-   background-image: linear-gradient(rgba(89, 196, 112, 0.644), white);
+.carouselbox {
     color:  black;
     height: 100%;
 }
 
+.carousel-inner {
+background-color: white !important;
+}
 
 .iconlargeandred {
     font-size: 150px; 

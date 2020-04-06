@@ -57,7 +57,7 @@ def checkout(request):
 # give message to customer how it went with the purchase
 
             if customer.paid:
-                messages.error(request, "You have successfully paid")
+                messages.error(request, "Thankyou for your order!")
                 request.session['cart'] = {}
                 return redirect(reverse('products'))
             else:

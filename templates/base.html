@@ -34,6 +34,15 @@
 <!--Top navbar-->
 <nav class="navbar navbar-light topnavbarbackground justify-content-center">
       <a class="navbar-brand-center"><h2>ART STORE</h2></a>
+      {% if messages %}
+        <div class="alert alert-info" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="messages">
+                {% for message in messages %}
+                   <div><h3>{{ message }}</h3></div>
+                {% endfor %}
+            </div>
+        </div>
+        {% endif %}
 </nav>
 
 
@@ -41,7 +50,7 @@
         {% block content %} {% endblock %}
     </div>
 
-    <footer>
+    <footer class="mt-60">
     <!--Bottom navbar-->
 <nav class="navbar navbar-expand-lg fixed-bottom navbar-dark bottomnavbarbackground">
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
@@ -50,59 +59,57 @@
   
   <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
     <ul class="navbar-nav mr-auto mt-auto text-center">
-      <li class="nav-item active navbutton">
-        <a class="nav-link buttontext" href="{% url 'products' %}">Store<h3><i class="fas fa-store-alt"></i></h3><span class="sr-only">(current)</span></a>
+      <li class="nav-item active redbuttonlarge my-2 my-sm-0">
+        <a class="nav-link buttontext" href="{% url 'products' %}">Store<h4><i class="fas fa-store"></i></h4><span class="sr-only">(current)</span></a>
       </li>
-      <li class="nav-item active navbutton">
-        <a class="nav-link buttontext" href="{% url 'exhibit' %}">Exhibit
-        <h3><i class="fas fa-chalkboard-teacher"></i></h3></a>
-      </li>
-            <li class="nav-item active navbutton">
+
+ <li class="nav-item active redbuttonlarge my-2 my-sm-0">
         <a class="nav-link buttontext" href="{% url 'exhibitions' %}">Events
-        <h3><i class="fas fa-calendar-alt"></i></h3></a>
+        </br><h4><i class="fas fa-calendar-alt"></i></h4></br></a>
       </li>
-      <li class="nav-item active navbutton">
-        <a class="nav-link buttontext" href="{% url 'admin:index' %}">Admin
-        <h3><i class="fas fa-user-lock"></i></h3></a>
+       <li class="nav-item active redbuttonlarge my-2 my-sm-0">
+        <a class="nav-link buttontext" href="{% url 'exhibit' %}">News
+        </br><h4><i class="fas fa-podcast"></i></h4></br></a>
       </li>
-      {% if user.is_authenticated %}
-      <li class="nav-item active navbutton">
-        <a class="nav-link buttontext" href="{% url 'profile' %}">profile
-        <h3><i class="fas fa-user"></i></h3></a>
+
+      <li class="nav-item active redbuttonlarge my-2 ml-5 my-sm-0 btn-group dropup">
+        <a class="nav-link dropdown-toggle buttontext" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Art</br>
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item nav-link text-dark" href="{% url 'galleryart' %}"><i class="fas fa-palette"></i> <p>Art</p></a>
+          <a class="dropdown-item nav-link text-dark" href="{% url 'galleryartists' %}"><i class="fas fa-chalkboard-teacher"></i ><p>Artists</p></a>
+          <a class="dropdown-item nav-link text-dark" href="{% url 'galleries' %}"><i class="fas fa-hotel"></i><p>Galleries</p></a>
+        </div>
       </li>
-      <li class="nav-item active navbutton">
-        <a class="nav-link buttontext" href="{% url 'logout' %}">Log Out <i class="fas fa-key"></i></a>
-        {%  else %}
-      </li>
-      <li class="nav-item active navbutton">
-        <a class="nav-link buttontext" href="{% url 'register' %}"><i class="fas fa-user-plus"></i></br>Register</a>
-      </li>
-      <li class="nav-item active navbutton">
-        <a class="nav-link buttontext" href="{% url 'login' %}"><i class="fas fa-sign-in-alt"></i></br>Log In</a>
-      </li>
-        {% endif %}   
-      <li class="nav-item active navbutton">
+     
+      <li class="nav-item active redbuttonlarge my-2 my-sm-0 btn-group dropup">
+        <a class="nav-link dropdown-toggle buttontext" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          User</br>
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+
+              {% if user.is_authenticated %}
+                <a class="dropdown-item nav-link text-dark" href="{% url 'profile' %}"><i class="fas fa-user"></i> Profile</a>
+                <a class="dropdown-item nav-link text-dark" href="{% url 'logout' %}"><i class="fas fa-key"></i> Log Out </a>
+                {%  else %}
+                <a class="dropdown-item nav-link text-dark" href="{% url 'login' %}"><i class="fas fa-sign-in-alt"></i> Log In</a>
+                <a class="dropdown-item nav-link text-dark" href="{% url 'register' %}"><i class="fas fa-user-plus"></i> Register</a>
+                {% endif %}  
+       </li>
+     {% if product_count > 0 %}    
+      <li class="nav-item active navbutton ml-5">
         <a class="nav-link buttontext" href="{% url 'view_cart' %}">Cart
-        {% if product_count > 0 %}
             <label class="badge">{{ product_count }}</label>
+        <h4><i class="fas fa-shopping-cart"></i></h4>   
         {% endif %}
-        <h3><i class="fas fa-shopping-cart"></i></h3></a>
+        </a>
       </li>                           
     </ul>
-     {% if messages %}
-        <div class="toast" alert role="alert" aria-live="assertive" aria-atomic="true" style="position: absolute; top: 5; right: 4;">
-            <div class="messages">
-                {% for message in messages %}
-                <div class="toast-header"><i class="fas fa-bullhorn"></i>ART STORE</div>
-                   <div class="toast-body"><h3>{{ message }}</h3></div>
-                {% endfor %}
-            </div>
-        </div>
-        {% endif %}
-   
+    
             <form class="form-inline my-2 my-lg-0" action="{% url 'search' %}" method="get">
                 <input class="form-control mr-sm-2" type="text" name="q" placeholder="type here">
-                <button class="btn navbutton ml-1 my-2 my-sm-0" type="search"><h3><i class="fas fa-search"></i></h3></button>
+                <button class="btn redbutton ml-1 my-2 my-sm-0" type="search"><h3 class= "mt-1"><i class="fas fa-search"></i></h3></button>
             </form>
   </div>
 </nav>

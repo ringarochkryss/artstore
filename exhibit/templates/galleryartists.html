@@ -1,26 +1,18 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<div class="row row-flex d-flex justify-content-center align-items-center">
-<!--..Exhibit Navigation.................................................................................-->
-<div class="justify-content-center align-items-center mb-3 col-10 col-md-1 btn-group-vertical mb-1">
-  <a class= "btn redbutton buttontextsm" href="{% url 'galleries' %}">Exhibit</a>
-  <a class="btn redbutton buttontextsm" href="{% url 'galleryart' %}">Art</a>
-  <a class="btn redbutton buttontextsm" href="{% url 'galleryartists' %}">Artists</a>
-</div>
-
 
 <!--..Gallery artist Carousel.................................................................................-->
 <div class="justify-content-center align-items-center col-12 col-md-11">
    <div id="alltheartists" class="zoom carousel slide col-12 col-md-10 col-md-offset-2 d-flex justify-content-center align-items-center" data-ride="carousel">
         <div class="carousel-inner d-block">
-                <div class="carousel-item active carouselboxyellow justify-content-center text-center">
-                    <p class="mb-1">It's critical times for the galleries</p></br>
-                    <h3 class = "mt-2"> </h3>
-                    <div class="artistimage"></br><h3>SUPPORT YOUR LOCAL GALLERY</h3></div>
+                <div class="carousel-item active carouselbox justify-content-center text-center">
+                    <p class="mb-1"></p></br>
+                    <h3 class = "mt-2">MEET THE ARTISTS</h3>
+                    <div class="artistimage"></br><h3></h3></div>
                 </div>
     {% for item in galleryartists %}
-                <div class="carousel-item carouselboxgreen justify-content-center text-center">
+                <div class="carousel-item carouselbox justify-content-center text-center">
                     <h3 class = "mt-2">{{item.artistname}}</h3>
                     <div class="artistimage" style="background-image: url('{{ MEDIA_URL }}{{item.artistimage}}')"></div>
                     <p class="text-dark">{{item.about}}</p>

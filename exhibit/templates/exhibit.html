@@ -1,24 +1,20 @@
 {% extends 'base.html' %}
 {% block content %}
 
+<!--..Site header.................................................................................-->
 <div class="row row-flex d-flex justify-content-center align-items-center">
-<!--..Exhibit Navigation.................................................................................-->
-    <div class="justify-content-center align-items-center mb-3 col-12 col-md-1 btn-group-vertical mb-1">
-    <a class= "btn longbutton buttontextsm" href="{% url 'galleries' %}">Exhibit</a>
-    <a class="btn longbutton buttontextsm" href="{% url 'galleryart' %}">Art</a>
-    <a class="btn longbutton buttontextsm" href="{% url 'galleryartists' %}">Artists</a>
-    </div>
+<h3>Latest Art News from Swedish Radio</h3>
 </div>
 
 <!--..API Swedish Radio.................................................................................-->
-
 <div class="row">
+
 <!--..Konst / Form.................................................................................-->
 <div class="card text-center col-12 col-md-4" style="width: 18rem;">
     <div id="radioimage" class="img-thumbnail" style="border: none;"></div> 
     <div id="radionews" class="card-body">
         <h3>Konst/Form</h3>
-        <a href="https://sverigesradio.se/gruppsida.aspx?programid=3980&grupp=12936" class="btn redbutton" role="button">Listen</a>
+        <a href="https://sverigesradio.se/gruppsida.aspx?programid=3980&grupp=12936" class="btn btn-dark"  target="_blank" role="button"><i class="fas fa-play"></i></a>
     </div>
 </div>
 
@@ -27,7 +23,7 @@
     <div id="radioimage2" class="img-thumbnail" style="border: none;"></div> 
     <div id="radionews2" class="card-body">
         <h3>Kulturnytt</h3>
-        <a href="https://sverigesradio.se/gruppsida.aspx?programid=5053&grupp=23675" class="btn redbutton" role="button">Listen</a>
+        <a href="https://sverigesradio.se/sida/avsnitt?programid=478" class="btn btn-dark"  target="_blank" role="button"><i class="fas fa-play"></i></a>
     </div>
 </div>
 
@@ -36,7 +32,7 @@
     <div id="radioimage3" class="img-thumbnail" style="border: none;"></div> 
     <div id="radionews3" class="card-body">
         <h3>P1 Kultur</h3>
-        <a href="https://sverigesradio.se/gruppsida.aspx?programid=5053&grupp=23675" class="btn redbutton" role="button">Listen</a>
+        <a href="https://sverigesradio.se/p1kultur" class="btn btn-dark"  target="_blank" role="button"><i class="fas fa-play"></i></a>
     </div>
 </div>
 
