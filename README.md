@@ -14,119 +14,6 @@ This is a Art Store for art-lovers with a lot of extra services. It contains the
 * Log in and register functionality for users who are going to buy art from this site. 
 * Log in functionality for Artists and Gallery-owners who wish to contribute with content to this site (grouped with different permissions). 
 
-
-#### Start a new project
-```
-$ django-admin startproject artstore
-```
-#### Add a app to the project
-```
-$ python3 manage.py startapp paintings
-```
-#### Install a Virtual environment:
-```
-$ wget https://bootstrap.pypa.io/get-pip.py 
-$ sudo python get-pip.py
-$ sudo pip install virtualenv
-$ virtualenv venv
-$ source venv/bin/activate
-``` 
-
-#### When ever changes or additions to the database:
-```
-$ python3 manage.py makemigrations
-$ python3 manage.py migrate
-$ python3 manage.py runserver
-```
-#### Changes to static files (css etc)
-```
-$ python3 manage.py collectstatic
--and type yes
-```
-#### Update the requirements.txt file
-```
-pip3 freeze --local > requirements.txt
-```
-#### Run 
-```
-python3 manage.py makemigrations
-```
-#### Changes involving the database
-```
-python3 manage.py migrate --run-syncdb
-```
-#### Clear Cache
-I installed a app to clear cache so now I just type this to clear the cache:
-```
-$ python3 manage.py clear_cache
-```
-
-#### The [Clear Cache](https://github.com/rdegges/django-clear-cache) -app is installed like this: 
-
-```
-pip3 install django-clear-cache 
- 
-In settings.py:
-
-INSTALLED_APPS = (
-    # ...
-    'clear_cache',
-)
-
-To clear your cache:
-$ python3 manage.py clear_cache
-
-```
-
-#### Git ignore fail
-Git ignore didn' work after I had been moving files around in my workspace. 
-I found out they were cached in the repository.  Source: stackoverflow-hero MarckK 
-```
-git rm -r --cached .
- git add .
-
-Then commit your changes:
-git commit -m "Untrack files in .gitignore"
-```
-
-#### Django Admin -change the styling
-Since Django Admin is a important part of this site, used by artists and gallerists,
-it's important it both looks ok and is easy to use. Dango Admin Styling: </br>
-[Django original css](https://raw.githubusercontent.com/django/django/master/django/contrib/admin/static/admin/css/base.css)
-</br>
-Source: [Elad Silver on Stack overflow](https://stackoverflow.com/users/1807569/elad-silver) :
-
-```
-In a template directory - create a folder called admin and in it create a file named base_site.html.
-
-In the static directory under css -create a file called admin-extra.css
-
-
-Paste this in the base_site.html:
-
-{% extends "admin/base.html" %}
-{% load static from staticfiles %} # This might be just {% load static %} in your ENV
-
-{% block title %}{{ title }} | {{ site_title|default:_('Django site admin') }}{% endblock %}
-
-{% block extrastyle %}{{ block.super }}<link rel="stylesheet" type="text/css" href="{% static "css/admin-extra.css" %}" />{% endblock %}
-
-{% block branding %}
-<h1 id="site-name"><a href="{% url 'admin:index' %}">{{ site_header|default:_('Django administration') }}</a></h1>
-{% endblock %}
-
-{% block nav-global %}{% endblock %}
-
-Note: It't important the app is before the admin app in INSTALLED_APPS, otherwise your template doesn't override django's
-```
-
-#### Django Admin Calendar 
-I added a calendar in Django Admin to ease the event bookings.
- </br>
-Source and instructions: [Alexandre Pinte](https://alexpnt.github.io/2017/07/15/django-calendar/)
-
-
-
 ## UX -who this website is for
  This site is built as a meeting point for art professionals and art consumers -all sharing the common interest of art.
  It's called Art Store however there are extra features to this site attempting to call the visitors back as often as possible.
@@ -276,12 +163,160 @@ This requires collaboration with other companies
 on how many art-items they can add to the views or to the shop. 
 
 ## Technologies Used
+* [Python3](https://www.python.org/download/releases/3.0/)
+    - The project is written in **Python 3.7** 
+* [Jinja](https://pypi.org/project/Jinja2/)
+    - Jinja is used in the templates to reference the database objects and add 
+    intelligence ie filters and conditions for the displayed data. For instance is the shopping
+    cart not displayed in the menu until something actually is in it.  
+* [JQuery](https://jquery.com)
+    - In the frontend Javascript and the library Jquery is used in order to make boostrap components like the 
+    carousel work and also to fetch data from the Swedish Radio Web API (this is a free API) with a AJAX-request method.
+* [Chrome Dev Tools](https://developers.google.com/web/tools/chrome-devtools)
+    - Developer Tools from Chrome is used to track problems in the frontend and also to find items in admin html to alter
+* [Pillow](https://pillow.readthedocs.io/en/stable/)
+    - Pillow is a python imaging library - this is used to handle images in the project
+* [Boto3](https://boto3.amazonaws.com/v1/documentation/api/latest/index.html)
+    - *"Boto is the Amazon Services (AWS) SDK for python. It enables python developers to createconfigure and 
+    manage AWS-services"* -in this project S3. 
+* [psycopg2](https://pypi.org/project/psycopg2/)
+    - *"Psycopg is the most popular PostgreSQL database adapter for the Python programming language"*
+* [stripe](https://stripe.com/en-se?utm_campaign=paid_brand-SE_en_Search_Brand_Stripe-1436985502&utm_medium=cpc&utm_source=google&ad_content=275927467139&utm_term=stripe&utm_matchtype=e&utm_adposition=&utm_device=c&gclid=Cj0KCQjwybD0BRDyARIsACyS8mv-K6J9FEBHuJwRbxUh9gb9fv0z4vxFUN6ji36Y7XHsqlKm2RRTCc4aAn0CEALw_wcB)
+    - *"Stripe is the best software platform for running an internet business."* Stripe is used on this site so the customers can pay for the art with their credit card. 
+    The site uses a test version of Stripe that only allows a test credit card.
+* [Urlib3](https://urllib3.readthedocs.io/en/latest/)
+    - *"Urllib3 is a powerful, sanity-friendly HTTP client for Python"*
+* [Pip](https://pypi.org/project/pip/)
+    - *"The PyPA recommended tool for installing Python packages."* 
+* [Requests](https://requests.readthedocs.io/en/master/)
+    - *"Requests allows you to send HTTP/1.1 requests extremely easily"*
+ * [gunicorn](https://gunicorn.org/)
+    - *"Gunicorn 'Green Unicorn' is a Python WSGI HTTP Server for UNIX"*
+* [Idna](https://pypi.org/project/idna/)
+    - *"Internationalized Domain Names in Applications (IDNA)"* Library on Pypi.
+* [JMESPath](https://pypi.org/project/jmespath/)
+    - - *"JMESPath (pronounced “james path”) allows you to declaratively specify how to extract elements from a JSON document."* Library on Pypi.
+ * [s3transfer](https://pypi.org/project/s3transfer/)
+    - *"S3transfer is a Python library for managing Amazon S3 transfers."* Library on Pypi.
+* [sqlparse]https://sqlparse.readthedocs.io/en/latest/)
+    - *"sqlparse is a non-validating SQL parser for Python. It provides support for parsing, splitting and formatting SQL statements."*
+* [urllib3](https://urllib3.readthedocs.io/en/latest/)
+    - urllib3 is a HTTP client for Python.
+[Django](https://docs.djangoproject.com/en/3.0/intro/tutorial01/)
+    - The project is written in Django.
+There is a lot to be said about writing a programme in Django, here is a small summary:
 
-In this section, you should mention all of the languages, frameworks, libraries, and any other tools that you have used to construct this project. For each, provide its name, a link to its official site and a short sentence of why it was used.
+#### Start a new project
+```
+$ django-admin startproject artstore
+```
+#### Add a app to the project
+```
+$ python3 manage.py startapp paintings
+```
+#### Install a Virtual environment:
+```
+$ wget https://bootstrap.pypa.io/get-pip.py 
+$ sudo python get-pip.py
+$ sudo pip install virtualenv
+$ virtualenv venv
+$ source venv/bin/activate
+``` 
 
-- [JQuery](https://jquery.com)
-    - The project uses **JQuery** to simplify DOM manipulation.
-[link to Google!](http://google.com)
+#### When ever changes or additions to the database:
+```
+$ python3 manage.py makemigrations
+$ python3 manage.py migrate
+$ python3 manage.py runserver
+```
+#### Changes to static files (css etc)
+```
+$ python3 manage.py collectstatic
+-and type yes
+```
+#### Update the requirements.txt file
+```
+pip3 freeze --local > requirements.txt
+```
+#### Run 
+```
+python3 manage.py makemigrations
+```
+#### Changes involving the database
+```
+python3 manage.py migrate --run-syncdb
+```
+#### Clear Cache
+I installed a app to clear cache so now I just type this to clear the cache:
+```
+$ python3 manage.py clear_cache
+```
+
+#### The [Clear Cache](https://github.com/rdegges/django-clear-cache) -app is installed like this: 
+
+```
+pip3 install django-clear-cache 
+ 
+In settings.py:
+
+INSTALLED_APPS = (
+    # ...
+    'clear_cache',
+)
+
+To clear your cache:
+$ python3 manage.py clear_cache
+
+```
+
+#### Git ignore fail
+Git ignore didn' work after I had been moving files around in my workspace. 
+I found out they were cached in the repository.  Source: stackoverflow-hero MarckK 
+```
+git rm -r --cached .
+ git add .
+
+Then commit your changes:
+git commit -m "Untrack files in .gitignore"
+```
+
+#### Django Admin -change the styling
+Since Django Admin is a important part of this site, used by artists and gallerists,
+it's important it both looks ok and is easy to use. Dango Admin Styling: </br>
+[Django original css](https://raw.githubusercontent.com/django/django/master/django/contrib/admin/static/admin/css/base.css)
+</br>
+Source: [Elad Silver on Stack overflow](https://stackoverflow.com/users/1807569/elad-silver) :
+
+```
+In a template directory - create a folder called admin and in it create a file named base_site.html.
+
+In the static directory under css -create a file called admin-extra.css
+
+
+Paste this in the base_site.html:
+
+{% extends "admin/base.html" %}
+{% load static from staticfiles %} # This might be just {% load static %} in your ENV
+
+{% block title %}{{ title }} | {{ site_title|default:_('Django site admin') }}{% endblock %}
+
+{% block extrastyle %}{{ block.super }}<link rel="stylesheet" type="text/css" href="{% static "css/admin-extra.css" %}" />{% endblock %}
+
+{% block branding %}
+<h1 id="site-name"><a href="{% url 'admin:index' %}">{{ site_header|default:_('Django administration') }}</a></h1>
+{% endblock %}
+
+{% block nav-global %}{% endblock %}
+
+Note: It't important the app is before the admin app in INSTALLED_APPS, otherwise your template doesn't override django's
+```
+
+#### Django Admin Calendar 
+I added a calendar in Django Admin to ease the event bookings.
+
+Source and instructions: [Alexandre Pinte](https://alexpnt.github.io/2017/07/15/django-calendar/)
+
+
 
 ## Testing
 
