@@ -1,8 +1,8 @@
 /*colors and fonts 
-dark bluegrey #1e3233
-almostwhite #f0f4e6
-grey #bfc0bd
-yellow #fcba03
+green #428667;
+redish: hsl(350, 98%, 50%) or #fc032c
+black
+white
 
 
 font-family: 'Julius Sans One', sans-serif;
@@ -25,8 +25,10 @@ body {
 }
 
 .bottomnavbarbackground {
-    background-color:  rgb(10, 10, 10, .8);
+    /*background-color:  rgb(10, 10, 10, .8);*/
+    background-image: linear-gradient(transparent, rgba(10, 10, 10, 0.1),rgba(10, 10, 10, 0.4),rgb(10, 10, 10, .9));
 }
+
 
 
 .nav-item .active {
@@ -54,11 +56,23 @@ h3 {
 font-family: 'Julius Sans One', sans-serif;
 }
 
+
+@media only screen and (max-width: 600px) {
+h2 {
+font-family: 'Bungee Hairline', cursive;
+font-size: 4em;
+color:black;
+font-weight: 300;
+text-align: center;
+  }
+}
+
 h2 {
 font-family: 'Bungee Hairline', cursive;
 font-size: 7em;
 color:black;
 font-weight: 300;
+text-align: center;
 }
 
 p {

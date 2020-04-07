@@ -15,7 +15,7 @@
                 <div class="carousel-item  carouselbox text-dark justify-content-center text-center">
                     <div class="exhibitionimage zoom" style="background-image: url('{{ MEDIA_URL }}{{item.galleryimage}}')"></div>
                     <h3>{{item.galleryname}}</h3>
-                    <p class="text-dark">Address: {{item.adress}}  Open: {{item.openinghours}} </p>
+                    <p class="text-dark"> {{item.adress}} | {{item.openinghours}} </p>
                 </div>
     {% endfor %}
         </div>
