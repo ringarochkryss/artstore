@@ -192,9 +192,10 @@ can be altered. The goal is to keep the site interesting and up to date. And thi
 of high value to journalists.  
 
 ### Design
-* **The dots:** The theme for the design is pink dots. It's fun and happy and in the same time 
-a white background and black buttons is trying to not steal the show to much. Pink dot's is decorating the top
-of the site -even in admin and the navigation buttons is also -pink dots. 
+* **The dots:** The theme for the design is pink dots. Therefore - pink dot's is decorating the top
+of the site -even in admin and the navigation buttons is just larger -pink dots. 
+Between the top and bottom the content has a white background and mainly black buttons to not 
+compete with the art content.
 
 * **Header :**A large header in a thin curvy type -also here alerts are displayed when needed. 
 
@@ -210,30 +211,69 @@ In the botton nav there is a seach bar connected to a button.
 radio episodes at the media site. In both cases images is used. All art images is decorated with 
 zoom functionality to make them larger on hover. 
 
-* **Bottom Navbar:**
+* **Carousels:** Art, artists, galleries and events is displayed in large carousels. On hover They
+get bigger sometimes even hiding the top header and images in carousels can be even larger on hover.
+The carousels is spinning unless they are hovered. 
+Fist slide in all carousels is a explanation of the content.
 
-* **Bottom Navbar:**
+* **admin:** The Django Admin is a important part of this site as it's intended to be used by both
+artists and gallery owners. The admin has got colors to match the pink theme on the main site, as well 
+as som pink dots. The events site in admin is styled as a calendar through a Django App called Events.
+There is one group for artists and gallerists in admin holding certain rights to edit certing functions in admin. 
 
 ## Features
 
 In this section, you should go over the different parts of your project, and describe each in a sentence or so.
  
 ### Existing Features
-- Feature 1 - allows users X to achieve Y, by having them fill out Z
-- ...
-
-First Header | Second Header
------------- | -------------
-Content from cell 1 | Content from cell 2
-Content in the first column | Content in the second column
 
 
-For some/all of your features, you may choose to reference the specific project files that implement them, although this is entirely optional.
+Webshop           | Art/Artist/Gallery  | News              | Events             | Admin   
+------------------|:-------------------:|:-----------------:|:------------------:|--------------:|
+Visitors can view and add products to the cart | Visitors can View Art | View Art News and image from three popular radio shows| See all art events |For Artists and Gallerists 
+Add or remove items -then buy it| Read about the artists | Read news -The site always displays the latest episode Fetched via Javascript from the free API| Images, who and when | Edit, add or delete products &, events As well as Artists, Galleries and Art
+Credit card Payment with Stripe | Get informaton about the Galleries | Click a link to listen  | | Admins who get super user status can overview all actions on the site 
 
-In addition, you may also use this section to discuss plans for additional features to be implemented in the future:
+
 
 ### Features Left to Implement
-- Another feature idea
+
+#### Overall
+* Since artists and galleries is from Sweden translations would be nice for Swedish, German and Danish
+ 
+#### Webshop
+* If many users some sort of limit for how many items from each artist allowed
+* If many users -add paging to the site
+* Add more info about the products, sizes, quality etc.
+* A system of how to pay the artists and how to get the actual products to the customers has to be developed
+* Notice when product is sold out
+* Notice when the order is more than the reamining amount of products
+* Shipping information and additional costs for it before Payment
+* Pick up -arrangements for people who want to pick up the art at a frame-ing company close to their home
+This requires collaboration with other companies
+
+#### Art/Artist/Gallery 
+* Perhaps the carousels could be full screen -for a more tv-like experience
+* Add more info about Art, artists and Galleries
+* Add clickable links (target_blank) to artists or galleries
+
+#### News
+* Build a proper play button to play the mp3 directly
+* Add more programmes and more info from each of the programmes
+* Add news from other sources, not just Swedish Radio 
+* Since the web site is in english -perhaps english art news would be preferable
+
+
+#### Events
+* Possibility to add several events on the same time (I have removed that possiblity for code learning reasons)
+
+#### Admin 
+* Admin css could be even more close to the Art Store site -the user should feel everything is the same website
+* Scheduler is written in the events app. It only displays times in the calendar -it would be nice with some words in there
+* Scheduler to the front - a slightly more wordy calendar should be displayed on the website frontend. 
+* This site doesn't display email or phonenumbers making it possible for users to contact admin or request higher user credentials. 
+* The site doesn't have any written out rules and limits for admins regarding what they are allowed to do in admin. For instance restrictions
+on how many art-items they can add to the views or to the shop. 
 
 ## Technologies Used
 
