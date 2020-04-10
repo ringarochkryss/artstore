@@ -509,7 +509,5 @@ Inspiration for this project was from meeting Marie Plogsjös a famous swedish a
 various ways to build them. My sisters "creative room" was a big inspiration to the theme of this site and Also her enlarged schetches made to posters.
 Finally my friend Annika who sells her crafts for charity -this site was inspired by her.
 
-Thankyou Code Institute -Teachers and Tutors and mentor Seun.
-This is my final examination in the training for 
- Code Institute Full Stack Web Developer 
-I
+Thankyou Code Institute -Teachers, Tutors and mentor Seun.
+ 
