@@ -6,9 +6,9 @@
 # The Art Store 
 
 ![Art Store](https://github.com/ringarochkryss/artstore/blob/9a16a7f7ec0bef7edece76fd6a9c3f8e20900a43/static/Readme%20images/amiresponsive.png)
-[Am I responsive](http://ami.responsivedesign.is/#)
 
-![Image description](link-to-image)
+[Am I responsive](http://ami.responsivedesign.is)
+
 ## About
 This is a Art Store for art-lovers with a lot of extra services. It contains the following:
 * Store for Art with Stripe Payment System
@@ -22,6 +22,9 @@ This is a Art Store for art-lovers with a lot of extra services. It contains the
  This site is built as a meeting point for art professionals and art consumers -all sharing the common interest of art.
  It's called Art Store however there are extra features to this site attempting to call the visitors back as often as possible.
  This is the purpose for displaying art events and art news -helping users to keep up with the latest concerning art.
+    Mockup to this project was made in [Mockflow](https://www.mockflow.com/)
+ ![Mockflow Mockup](https://github.com/ringarochkryss/artstore/blob/1a673310b601b1ad57480393a1cc2a2c69d7fbe4/static/Readme%20images/mockup%20wireframe%20mile4.png)
+
 
 ### User Stories
 #### The Art consumer
@@ -279,7 +282,10 @@ Then commit your changes:
 git commit -m "Untrack files in .gitignore"
 ```
 
+![Admin calendar](https://github.com/ringarochkryss/artstore/blob/1a673310b601b1ad57480393a1cc2a2c69d7fbe4/static/Readme%20images/amiresponsiveadminsmall.png)
+
 #### Django Admin -change the styling
+
 Since Django Admin is a important part of this site, used by artists and gallerists,
 it's important it both looks ok and is easy to use. Dango Admin Styling: </br>
 [Django original css](https://raw.githubusercontent.com/django/django/master/django/contrib/admin/static/admin/css/base.css)
@@ -290,7 +296,6 @@ Source: [Elad Silver on Stack overflow](https://stackoverflow.com/users/1807569/
 In a template directory - create a folder called admin and in it create a file named base_site.html.
 
 In the static directory under css -create a file called admin-extra.css
-
 
 Paste this in the base_site.html:
 
@@ -311,6 +316,7 @@ Note: It't important the app is before the admin app in INSTALLED_APPS, otherwis
 ```
 
 #### Django Admin Calendar 
+
 I added a calendar in Django Admin to ease the event bookings.
 
 Source and instructions: [Alexandre Pinte](https://alexpnt.github.io/2017/07/15/django-calendar/)
@@ -438,6 +444,8 @@ Then push the same data to Github that was just sent to Heroku:
 ```
 git push -u origin master
 ```
+![Heroku deployment](https://github.com/ringarochkryss/artstore/blob/1a673310b601b1ad57480393a1cc2a2c69d7fbe4/static/Readme%20images/deployment%20heroku.png)
+
 The possibility in Heroku to connect with Github for automatic syncronisazion is used in this project.
 ```
 * login to heroku and the artstore repository
@@ -479,23 +487,29 @@ pip3 freeze --local > requirements.txt
 ## Credits
 
 ### Content
-Sources for this Readme is referenced when they occur. More general Sources is:
-* [Code Institute](https://codeinstitute.net/5-day-coding-challenge/?utm_term=code%20institute&utm_campaign=a%252526c_BR_IRL_Code_Institute&utm_source=adwords&utm_medium=ppc&hsa_net=adwords&hsa_tgt=kwd-319867646331&hsa_ad=417953888762&hsa_acc=8983321581&hsa_grp=61892761125&hsa_mt=e&hsa_cam=1653311402&hsa_kw=code%20institute&hsa_ver=3&hsa_src=g&gclid=CjwKCAjwssD0BRBIEiwA-JP5rIaasKahTTABTKWT4xmR40LKT7dZEzrptN8NROsKin-YuzzBeu_qbxoCZsoQAvD_BwE) Full Stack developer Course
+Sources for this project is referenced when they occur. More general Sources is:
+
+* [Code_Institute](https://codeinstitute.net/5-day-coding-challenge/?utm_term=code%20institute&utm_campaign=a%252526c_BR_IRL_Code_Institute&utm_source=adwords&utm_medium=ppc&hsa_net=adwords&hsa_tgt=kwd-319867646331&hsa_ad=417953888762&hsa_acc=8983321581&hsa_grp=61892761125&hsa_mt=e&hsa_cam=1653311402&hsa_kw=code%20institute&hsa_ver=3&hsa_src=g&gclid=CjwKCAjwssD0BRBIEiwA-JP5rIaasKahTTABTKWT4xmR40LKT7dZEzrptN8NROsKin-YuzzBeu_qbxoCZsoQAvD_BwE) 
 * [Django](https://www.djangoproject.com/)
 * [W3schools](https://www.w3schools.com/)
 * [Microsoft](https://docs.microsoft.com/en-us/visualstudio/python/learn-django-in-visual-studio-step-01-project-and-solution?view=vs-2019)
 * [Stackoverflow](https://stackoverflow.com/)
 
 ### Media
-- The photos used was taken by me on paintings made by my sister Elin. 
+- The photos used was taken by me on paintings and drawings made by my sister Elin.
+- Galleries images from Galleries own websites 
+- Event image no1 from Unsplash
+- Artist images from Linkedin
+- Images added by test users not referenced above occurs
 
 
 ### Acknowledgements
 Inspiration for this project was from meeting Marie Plogsjös a famous swedish artist realizing we have many great female artists in south of Sweden.
 - I also received inspiration for this project from work where we discussed web shops and
-various ways to build them. My sisters "creative room" was a big inspiration to the theme of this site.
+various ways to build them. My sisters "creative room" was a big inspiration to the theme of this site and Also her enlarged schetches made to posters.
+Finally my friend Annika who sells her crafts for charity -this site was inspired by her.
 
-Finally my friend Annika who sells her crafts for charity -this site was inpired by her.
-
-Thankyou Co de Institute -Teachers and Tutors and mentor Seun.
-This is my final examination for Code Institute Full Stack
+Thankyou Code Institute -Teachers and Tutors and mentor Seun.
+This is my final examination in the training for 
+ Code Institute Full Stack Web Developer 
+I
