@@ -5,9 +5,9 @@ from .models import Product
 # Create your tests here.
 class ProductTests(TestCase):
     """
-    Here we'll define tests tobe run against our
-    Product model Methods. OBS! Has start with test!
-    these test will ber run againtst the Product model
+    Here we'll define tests to be run against our
+    Product model Methods. OBS! Has to start with the word test!
+    these test will be run against the Product model
     """
 
     def test_str(self):

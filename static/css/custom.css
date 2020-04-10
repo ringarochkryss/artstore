@@ -73,6 +73,7 @@ font-size: 7em;
 color:black;
 font-weight: 300;
 text-align: center;
+text-decoration: none;
 }
 
 p {
@@ -301,6 +302,7 @@ caption p {
 .carouselbox {
     color:  black;
     height: 100%;
+    vertical-align: middle;
 }
 
 .carousel-inner {

@@ -30,11 +30,11 @@
     {% endblock head_js %}
 
 </head>
-<body>
+<body class="container-flex h-100">
 <!--Top navbar-->
 <nav class="navbar navbar-light topnavbarbackground justify-content-center">
-      <a class="navbar-brand-center"><h2>ART STORE</h2></a>
-      {% if messages %}
+      <h2>ART STORE</h2>
+    {% if messages %}
         <div class="alert alert-info" role="alert" aria-live="assertive" aria-atomic="true">
             <div class="messages">
                 {% for message in messages %}
@@ -42,7 +42,7 @@
                 {% endfor %}
             </div>
         </div>
-        {% endif %}
+    {% endif %}
 </nav>
 
 
@@ -60,6 +60,8 @@
         <a class="nav-link buttontext" href="{% url 'products' %}">Shop<h4><i class="fas fa-gifts"></i></h4><span class="sr-only">(current)</span></a>
       </li>
 
+
+
     <li class="nav-item active redbuttonlarge my-2 my-sm-0 d-none d-md-block">
         <a class="nav-link buttontext" href="{% url 'exhibitions' %}">Events
         </br><h4><i class="far fa-calendar-check"></i></h4></br></a>
@@ -67,6 +69,10 @@
        <li class="nav-item active redbuttonlarge my-2 my-sm-0 d-none d-md-block">
         <a class="nav-link buttontext" href="{% url 'exhibit' %}">News
         </br><h4><i class="fas fa-podcast"></i></h4></br></a>
+      </li>
+             <li class="nav-item active redbuttonlarge my-2 my-sm-0 d-none d-md-block">
+        <a class="nav-link buttontext" href = "mailto: admin@artstore.se">Email
+        </br><h4><i class="far fa-envelope"></i></h4></br></a>
       </li>
 
       <li class="nav-item active redbuttonlarge my-2 my-sm-0 btn-group dropup">
@@ -78,8 +84,8 @@
           <a class="dropdown-item nav-link redbuttonlarge mx-auto mb-2" href="{% url 'galleryartists' %}"><i class="fas fa-chalkboard-teacher"></i ><p>Artists</p></a>
           <a class="dropdown-item nav-link redbuttonlarge mx-auto mb-2" href="{% url 'galleries' %}"><i class="fas fa-hotel"></i><p>Galleries</p></a>
           <a class="dropdown-item nav-link redbuttonlarge mx-auto mb-2 d-md-none" href="{% url 'events' %}"><i class="far fa-calendar-check"></i><p>Events</p></a>
-          <a class="dropdown-item nav-link redbuttonlarge mx-auto d-md-none" href="{% url 'exhibit' %}"><i class="fas fa-podcast"></i><p>News</p></a>
-          
+          <a class="dropdown-item nav-link redbuttonlarge mx-auto mb-2 d-md-none " href="{% url 'exhibit' %}"><i class="fas fa-podcast"></i><p>News</p></a>
+          <a class="dropdown-item nav-link redbuttonlarge mx-auto d-md-none" href = "mailto: admin@artstore.se"><i class="far fa-envelope"></i><p>Email</p></a>
           
         </div>
       </li>

@@ -198,11 +198,11 @@ on how many art-items they can add to the views or to the shop.
     - - *"JMESPath (pronounced “james path”) allows you to declaratively specify how to extract elements from a JSON document."* Library on Pypi.
  * [s3transfer](https://pypi.org/project/s3transfer/)
     - *"S3transfer is a Python library for managing Amazon S3 transfers."* Library on Pypi.
-* [sqlparse]https://sqlparse.readthedocs.io/en/latest/)
+* [sqlparse](https://sqlparse.readthedocs.io/en/latest/)
     - *"sqlparse is a non-validating SQL parser for Python. It provides support for parsing, splitting and formatting SQL statements."*
 * [urllib3](https://urllib3.readthedocs.io/en/latest/)
     - urllib3 is a HTTP client for Python.
-[Django](https://docs.djangoproject.com/en/3.0/intro/tutorial01/)
+* [Django](https://docs.djangoproject.com/en/3.0/intro/tutorial01/)
     - The project is written in Django.
 There is a lot to be said about writing a programme in Django, here is a small summary:
 
@@ -320,34 +320,161 @@ Source and instructions: [Alexandre Pinte](https://alexpnt.github.io/2017/07/15/
 
 ## Testing
 
-In this section, you need to convince the assessor that you have conducted enough testing to legitimately believe that the site works well. Essentially, in this part you will want to go over all of your user stories from the UX section and ensure that they all work as intended, with the project providing an easy and straightforward way for the users to achieve their goals.
+#### Django
+In each created Django app a test document is created by default. How to work with
+tests in Django is documented [here](https://docs.djangoproject.com/en/3.0/topics/testing/overview/)
+This app have a humble Django Test in the products app simply testing products name working proberly.
 
-Whenever it is feasible, prefer to automate your tests, and if you've done so, provide a brief explanation of your approach, link to the test file(s) and explain how to run them.
+To run Django tests: 
+In theia terminal -write:
+```
+python3 manage.py test products
+```
+#### Travis
+*Travis CI is a hosted[2] continuous integration service used to build and test software projects hosted at GitHub and Bitbucket. Explanation from: *[Wikipedia](https://en.wikipedia.org/wiki/Travis_CI)
 
-For any scenarios that have not been automated, test the user stories manually and provide as much detail as is relevant. A particularly useful form for describing your testing process is via scenarios, such as:
+Travis runs commands specified in a .travis.yml -file on each push to github. The Travis button on top of this Readme indicates if the programme passed the test. 
 
-1. Contact form:
-    1. Go to the "Contact Us" page
-    2. Try to submit the empty form and verify that an error message about the required fields appears
-    3. Try to submit the form with an invalid email address and verify that a relevant error message appears
-    4. Try to submit the form with all inputs valid and verify that a success message appears.
+#### Manual tests
+The manual tests has been performed by 5 test users and has followed this protocol:
 
-In addition, you should mention in this section how your project looks and works on different browsers and screen sizes.
+##### Buy Art and Login
+* Go to Art Store
+* Art images should zoom on hover
+* Add 3 items to the chart 
+* Notice if the button chart (with items in it) is displayed in the bottom nav
+* Continue to checkout
+* Get promt to login (test this is i working)
+* Create account
+* Log in 
+* Continue to Cart 
+* Change number on one item (ie from one to two)
+* Remove one item from chart 
+* Go back and add another item to the chart 
+* Continue to checkout 
+* Buy items with 555 dummy creditcard (= a non working card)
+* Notice alert
+* Buy items with 42x8 dummy creditcard (=a working card)
+* Notice if message pops up with thank you for your purchase 
+* Notice if you get back to the Art Store site 
 
-You should also mention in this section any interesting bugs or problems you discovered during your testing, even if you haven't addressed them yet.
+##### Login
+* Login
+* Logout 
+* Pretend to forget your password and try to get a new one 
+* Again login 
+* Try to login with the wrong credentials 
+* Try to login with empty fields
 
-If this section grows too long, you may want to split it off into a separate file and link to it from here.
+#### Admin 
+* As a normal customer -try to get in to admin (expected to fail with no access)
+* As a artist customer  - try to get in to admin (expected to pass)
+* Add art, artist and gallery 
+* edit the above 
+* Look at the site and see the changes is there (tests the view site button as well) 
+* Add edit and delete events
+* Book a event on the same day as there is already one (expected warning) 
+* Look at the site and see the Changes
+* Try to edit groups and users (expected not beeing able to do that)
+* Navigation in admin -test all buttons and links
+* As a superuser -go to admin and edit all functions (expected to pass)
+
+#### Buttons links and search
+* Test all buttons including them in the dropups in bottom navbar from all pages 
+* Search for products in artstore
+
+#### Carousels (Art, Artists, Events and Galleries)
+* Carousels should spin by themself if user do nothing
+* Carousels should stop and zoom on hover
+* Buttons in the carousel should change views in a correct manner 
+
+
+#### Contact
+* Email button in nav should send you to your email-programme
+* dummy email adress to the artstore should be displayed in the email you are about to send 
+
+#### Art News
+* Go to news site (expected to see text and news from three programmes)
+* Follow the links to the radio shows on Swedish Radio 
+* Confirm this is actually the latest episode of each programme
+
+#### Responsiveness
+* Notice Store and News displays on column on small screens and three on larger
+* Notice carousels on art, artists, galleries and events has full screen width on small screens
+    and is vertical and horzontal centered on all screens. 
+* Navbar all buttons accessible on all screen sizes (some buttons are collapsed on mobilie)
+* On touch screen -check carousels working on touch
+* On touch screens -check buttons to be touch friendly with older users in mind
+* Perform all tests from above on mobile, tablet and large screen to make sure it works on them all.
+
+#### Bugs and problems
+* Add item to chart in the Art store without adding a actual number in the input field generates a error outside the programme. 
+This should be fixes by adding a default value of 1 to the input field (not just a placeholder as now). 
+If the error still is provoced it should result in a alert inside the programme. 
 
 ## Deployment
+Deployment to Heroku was performed by:
+1. Creating a new repository at Heroku
+2. login from the terminal:
+```
+heroku login
+```
 
-This section should describe the process you went through to deploy the project to a hosting platform (e.g. GitHub Pages or Heroku).
+Then commit to Heroku:
+```
+git remote -v
+git add .
+git commit -m "header" -m "subject"
+git push -u heroku master
+```
 
-In particular, you should provide all details of the differences between the deployed version and the development version, if any, including:
-- Different values for environment variables (Heroku Config Vars)?
-- Different configuration files?
-- Separate git branch?
+Deployment to Github was performed by:
+1. Creating a new repository on Github
+2. Login from the terminal:
+```
+git remote add origin https://github.com/ringarochkryss/artstore.git
+```
 
-In addition, if it is not obvious, you should also describe how to run your code locally.
+Then push the same data to Github that was just sent to Heroku:
+```
+git push -u origin master
+```
+The possibility in Heroku to connect with Github for automatic syncronisazion is used in this project.
+```
+* login to heroku and the artstore repository
+* Go to Deploy
+* Scroll down to Deployment method and press the button Github (follow instructions for connections) 
+```
+This project is written in Gitpod and after the gitpod workspace was properly linked to github as described above - deployments were made simply by typing the following to the terminal:
+```
+git add .
+git commit -m "headermessage" -m "commentmessage"
+git push
+```
+
+This magically pushed to heroku aswell and was published on Heroku to be seen [here](https://petrasartstore.herokuapp.com/) 
+
+This project has several git branches -the master is the one that is used. 
+Other branches is sidetracks for discussions with tutors as this is a school project, please don't mind them.
+
+To run this code locally you need to create a python 3 project and install Django as described above.
+1. fork this project from Github
+2. Create a virtual environment
+```
+$ wget https://bootstrap.pypa.io/get-pip.py 
+$ sudo python get-pip.py
+$ sudo pip install virtualenv
+$ virtualenv venv
+$ source venv/bin/activate
+``` 
+3. Install requirements from the requirements.txt
+```
+pip3 freeze --local > requirements.txt
+```
+4. Create a file called env.py and att it to your gitignore file. 
+5. Create environment variables: You need to create your own environments variable secret codes.
+   All environment variables for this project is found in the app karamellen -settings.py. This is the placeholders for the actual codes. 
+6. The secret variables can also be written into heroku secret variables section to make the app work and run when hosted on Heroku. 
 
 
 ## Credits
