@@ -496,17 +496,16 @@ Sources for this project is referenced when they occur. More general Sources is:
 * [Stackoverflow](https://stackoverflow.com/)
 
 ### Media
-- The photos used was taken by me on paintings and drawings made by my sister Elin
-- Galleries images from Galleries own websites 
+- Art photos on this site is taken by me on paintings and drawings made by my sister Elin
+- Gallery images is from Galleries own websites 
 - Event image no1 from Unsplash
-- Artist images from Linkedin
+- Artist images from Linkedin 
 
 
 ### Acknowledgements
-Inspiration for this project was from meeting Marie Plogsjös a famous swedish artist realizing we have many great female artists in south of Sweden.
-- I also received inspiration for this project from work where we discussed web shops and
-various ways to build them. My sisters "creative room" was a big inspiration to the theme of this site and Also her enlarged schetches made to posters.
-Finally my friend Annika who sells her crafts for charity -this site was inspired by her.
+My sisters "creative room" was obviously a big inspiration to the theme of this site and Also her enlarged schetches made to posters.
+My friend Annika who sells her crafts for charity inspired me to add events to this site and the radio-news 
+is from my own interest in having just that site with all the good radio shows in one place.  
 
 Thankyou Code Institute -Teachers, Tutors and mentor Seun.
  
