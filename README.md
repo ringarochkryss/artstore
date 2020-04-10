@@ -327,7 +327,7 @@ Source and instructions: [Alexandre Pinte](https://alexpnt.github.io/2017/07/15/
 #### Django
 In each created Django app a test document is created by default. How to work with
 tests in Django is documented [here](https://docs.djangoproject.com/en/3.0/topics/testing/overview/)
-This app have a humble Django Test in the products app simply testing products name working proberly.
+This app have a humble Django Test in the products app simply testing products name working properly.
 
 To run Django tests: 
 In theia terminal -write:
@@ -340,76 +340,76 @@ python3 manage.py test products
 Travis runs commands specified in a .travis.yml -file on each push to github. The Travis button on top of this Readme indicates if the programme passed the test. 
 
 #### Manual tests
-The manual tests has been performed by 5 test users and has followed this protocol:
+The manual tests has been performed by 5 test users and has followed these protocols:
 
 ##### Buy Art and Login
-* Go to Art Store
-* Art images should zoom on hover
-* Add 3 items to the chart 
-* Notice if the button chart (with items in it) is displayed in the bottom nav
-* Continue to checkout
-* Get promt to login (test this is i working)
-* Create account
-* Log in 
-* Continue to Cart 
-* Change number on one item (ie from one to two)
-* Remove one item from chart 
-* Go back and add another item to the chart 
-* Continue to checkout 
-* Buy items with 555 dummy creditcard (= a non working card)
-* Notice alert
-* Buy items with 42x8 dummy creditcard (=a working card)
-* Notice if message pops up with thank you for your purchase 
-* Notice if you get back to the Art Store site 
+1. Go to Art Store
+2. Art images should zoom on hover
+3. Add 3 items to the chart 
+4. Notice if the button chart (with items in it) is displayed in the bottom nav
+5. Continue to checkout
+6. Get promt to login (test this is i working)
+7. Create account
+8. Log in 
+9. Continue to Cart 
+10. Change number on one item (ie from one to two)
+11. Remove one item from chart 
+12. Go back and add another item to the chart 
+13. Continue to checkout 
+14. Buy items with 555 dummy creditcard (= a non working card)
+15. Notice alert
+16. Buy items with 42x8 dummy creditcard (=a working card)
+17. Notice if message pops up with thank you for your purchase 
+18. Notice if you get back to the Art Store site 
 
 ##### Login
-* Login
-* Logout 
-* Pretend to forget your password and try to get a new one 
-* Again login 
-* Try to login with the wrong credentials 
-* Try to login with empty fields
+1. Login
+2. Logout 
+3. Pretend to forget your password and try to get a new one 
+4. Again login 
+5. Try to login with the wrong credentials 
+6. Try to login with empty fields
 
 ##### Admin 
-* As a normal customer -try to get in to admin (expected to fail with no access)
-* As a artist customer  - try to get in to admin (expected to pass)
-* Add art, artist and gallery 
-* edit the above 
-* Look at the site and see the changes is there (tests the view site button as well) 
-* Add edit and delete events
-* Book a event on the same day as there is already one (expected warning) 
-* Look at the site and see the Changes
-* Try to edit groups and users (expected not beeing able to do that)
-* Navigation in admin -test all buttons and links
-* As a superuser -go to admin and edit all functions (expected to pass)
+1. As a normal customer -try to get in to admin (expected to fail with no access)
+2. As a artist customer  - try to get in to admin (expected to pass)
+3. Add art, artist and gallery 
+4. edit the above 
+5. Look at the site and see the changes is there (tests the view site button as well) 
+6. Add edit and delete events
+7. Book a event on the same day as there is already one (expected warning) 
+8. Look at the site and see the Changes
+9. Try to edit groups and users (expected not beeing able to do that)
+10. Navigation in admin -test all buttons and links
+11. As a superuser -go to admin and edit all functions (expected to pass)
 
 ##### Buttons links and search
-* Test all buttons including them in the dropups in bottom navbar from all pages 
-* Search for products in artstore
+1. Test all buttons including them in the dropups in bottom navbar from all pages 
+2. Search for products in artstore
 
 ##### Carousels (Art, Artists, Events and Galleries)
-* Carousels should spin by themself if user do nothing
-* Carousels should stop and zoom on hover
-* Buttons in the carousel should change views in a correct manner 
+1. Carousels should spin by themself if user do nothing
+2. Carousels should stop and zoom on hover
+3. Buttons in the carousel should change views in a correct manner 
 
 
 ##### Contact
-* Email button in nav should send you to your email-programme
-* dummy email adress to the artstore should be displayed in the email you are about to send 
+1. Email button in nav should send you to your email-programme
+2. dummy email adress to the artstore should be displayed in the email you are about to send 
 
 ##### Art News
-* Go to news site (expected to see text and news from three programmes)
-* Follow the links to the radio shows on Swedish Radio 
-* Confirm this is actually the latest episode of each programme
+1. Go to news site (expected to see text and news from three programmes)
+2. Follow the links to the radio shows on Swedish Radio 
+3. Confirm this is actually the latest episode of each programme
 
 ##### Responsiveness
-* Notice Store and News displays on column on small screens and three on larger
-* Notice carousels on art, artists, galleries and events has full screen width on small screens
+1. Notice Store and News displays on column on small screens and three on larger
+2. Notice carousels on art, artists, galleries and events has full screen width on small screens
     and is vertical and horzontal centered on all screens. 
-* Navbar all buttons accessible on all screen sizes (some buttons are collapsed on mobilie)
-* On touch screen -check carousels working on touch
-* On touch screens -check buttons to be touch friendly with older users in mind
-* Perform all tests from above on mobile, tablet and large screen to make sure it works on them all.
+3. Navbar all buttons accessible on all screen sizes (some buttons are collapsed on mobilie)
+4. On touch screen -check carousels working on touch
+5. On touch screens -check buttons to be touch friendly with older users in mind
+6. Perform all tests from above on mobile, tablet and large screen to make sure it works on them all.
 
 #### Bugs and problems
 * Add item to chart in the Art store without adding a actual number in the input field generates a error outside the programme. 
@@ -443,9 +443,10 @@ Then push the same data to Github that was just sent to Heroku:
 ```
 git push -u origin master
 ```
-![Heroku deployment](https://github.com/ringarochkryss/artstore/blob/1a673310b601b1ad57480393a1cc2a2c69d7fbe4/static/Readme%20images/deployment%20heroku.png)
 
 The possibility in Heroku to connect with Github for automatic syncronisazion is used in this project.
+![Heroku deployment](https://github.com/ringarochkryss/artstore/blob/1a673310b601b1ad57480393a1cc2a2c69d7fbe4/static/Readme%20images/deployment%20heroku.png)
+
 ```
 * login to heroku and the artstore repository
 * Go to Deploy
@@ -477,7 +478,7 @@ $ source venv/bin/activate
 ```
 pip3 freeze --local > requirements.txt
 ```
-4. Create a file called env.py and att it to your gitignore file. 
+4. Create a file called env.py and add it to your gitignore file. 
 5. Create environment variables: You need to create your own environments variable secret codes.
    All environment variables for this project is found in the app karamellen -settings.py. This is the placeholders for the actual codes. 
 6. The secret variables can also be written into heroku secret variables section to make the app work and run when hosted on Heroku. 
@@ -495,11 +496,10 @@ Sources for this project is referenced when they occur. More general Sources is:
 * [Stackoverflow](https://stackoverflow.com/)
 
 ### Media
-- The photos used was taken by me on paintings and drawings made by my sister Elin.
+- The photos used was taken by me on paintings and drawings made by my sister Elin
 - Galleries images from Galleries own websites 
 - Event image no1 from Unsplash
 - Artist images from Linkedin
-- Images added by test users not referenced above occurs
 
 
 ### Acknowledgements
