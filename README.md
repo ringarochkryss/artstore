@@ -282,8 +282,6 @@ Then commit your changes:
 git commit -m "Untrack files in .gitignore"
 ```
 
-![Admin calendar](https://github.com/ringarochkryss/artstore/blob/1a673310b601b1ad57480393a1cc2a2c69d7fbe4/static/Readme%20images/amiresponsiveadminsmall.png)
-
 #### Django Admin -change the styling
 
 Since Django Admin is a important part of this site, used by artists and gallerists,
@@ -314,6 +312,7 @@ Paste this in the base_site.html:
 
 Note: It't important the app is before the admin app in INSTALLED_APPS, otherwise your template doesn't override django's
 ```
+![Admin calendar](https://github.com/ringarochkryss/artstore/blob/1a673310b601b1ad57480393a1cc2a2c69d7fbe4/static/Readme%20images/amiresponsiveadminsmall.png)
 
 #### Django Admin Calendar 
 
