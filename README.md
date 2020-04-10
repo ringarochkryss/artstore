@@ -503,7 +503,7 @@ Sources for this project is referenced when they occur. More general Sources is:
 
 
 ### Acknowledgements
-My sisters "creative room" was obviously a big inspiration to the theme of this site and Also her enlarged schetches made to posters.
+My twin sisters "creative room" was obviously a big inspiration to the theme of this site and Also her enlarged schetches made to posters. 
 My friend Annika who sells her crafts for charity inspired me to add events to this site and the radio-news 
 is from my own interest in having just that site with all the good radio shows in one place.  
 
