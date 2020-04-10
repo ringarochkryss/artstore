@@ -4,6 +4,7 @@
 ![Heroku](https://heroku-badge.herokuapp.com/?app=heroku-badge)
 <a href="http://www.djangoproject.com/"><img src="https://www.djangoproject.com/m/img/badges/djangoproject120x25.gif" border="0" alt="A Django project." title="A Django project." /></a>
 # The Art Store 
+This site is published on Heroku to be seen [here](https://petrasartstore.herokuapp.com/) 
 
 ![Art Store](https://github.com/ringarochkryss/artstore/blob/9a16a7f7ec0bef7edece76fd6a9c3f8e20900a43/static/Readme%20images/amiresponsive.png)
 
@@ -452,14 +453,13 @@ The possibility in Heroku to connect with Github for automatic syncronisazion is
 * Go to Deploy
 * Scroll down to Deployment method and press the button Github (follow instructions for connections) 
 ```
-This project is written in Gitpod and after the gitpod workspace was properly linked to github as described above - deployments were made simply by typing the following to the terminal:
+Now push to Github and Heroku in the same time by typing in the terminal: 
 ```
 git add .
 git commit -m "headermessage" -m "commentmessage"
 git push
 ```
-
-This magically pushed to heroku aswell and was published on Heroku to be seen [here](https://petrasartstore.herokuapp.com/) 
+This site is published on Heroku to be seen [here](https://petrasartstore.herokuapp.com/) 
 
 This project has several git branches -the master is the one that is used. 
 Other branches is sidetracks for discussions with tutors as this is a school project, please don't mind them.
