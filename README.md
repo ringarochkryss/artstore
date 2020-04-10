@@ -480,12 +480,23 @@ pip3 freeze --local > requirements.txt
 ## Credits
 
 ### Content
-- The text for section Y was copied from the [Wikipedia article Z](https://en.wikipedia.org/wiki/Z)
-[link to Google!](http://google.com)
+Sources for this Readme is referenced when they occur. More general Sources is:
+* [Code Institute](https://codeinstitute.net/5-day-coding-challenge/?utm_term=code%20institute&utm_campaign=a%252526c_BR_IRL_Code_Institute&utm_source=adwords&utm_medium=ppc&hsa_net=adwords&hsa_tgt=kwd-319867646331&hsa_ad=417953888762&hsa_acc=8983321581&hsa_grp=61892761125&hsa_mt=e&hsa_cam=1653311402&hsa_kw=code%20institute&hsa_ver=3&hsa_src=g&gclid=CjwKCAjwssD0BRBIEiwA-JP5rIaasKahTTABTKWT4xmR40LKT7dZEzrptN8NROsKin-YuzzBeu_qbxoCZsoQAvD_BwE) Full Stack developer Course
+* [Django](https://www.djangoproject.com/)
+* [W3schools](https://www.w3schools.com/)
+* [Microsoft](https://docs.microsoft.com/en-us/visualstudio/python/learn-django-in-visual-studio-step-01-project-and-solution?view=vs-2019)
+* [Stackoverflow](https://stackoverflow.com/)
+
 ### Media
-- The photos used in this site were obtained from ...
+- The photos used was taken by me on paintings made by my sister Elin. 
+
 
 ### Acknowledgements
+Inspiration for this project was from meeting Marie Plogsjös a famous swedish artist realizing we have many great female artists in south of Sweden.
+- I also received inspiration for this project from work where we discussed web shops and
+various ways to build them. My sisters "creative room" was a big inspiration to the theme of this site.
 
-- I received inspiration for this project from X
-[link to Google!](http://google.com)
+Finally my friend Annika who sells her crafts for charity -this site was inpired by her.
+
+Thankyou Co de Institute -Teachers and Tutors and mentor Seun.
+This is my final examination for Code Institute Full Stack
