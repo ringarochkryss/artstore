@@ -1,16 +1,18 @@
 [![Gitpod Ready-to-Code](https://img.shields.io/badge/Gitpod-Ready--to--Code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/ringarochkryss/artstore) 
-
-
+[![Python 3.7](https://img.shields.io/badge/python-3.7-blue.svg)](https://www.python.org/downloads/release/python-360/)
 [![Build Status](https://travis-ci.org/ringarochkryss/artstore.svg?branch=master)](https://travis-ci.org/ringarochkryss/artstore)
-
+![Heroku](https://heroku-badge.herokuapp.com/?app=heroku-badge)
+<a href="http://www.djangoproject.com/"><img src="https://www.djangoproject.com/m/img/badges/djangoproject120x25.gif" border="0" alt="A Django project." title="A Django project." /></a>
 # The Art Store 
+<a href="https://petrasartstore.herokuapp.com/products/"><img src="https://github.com/ringarochkryss/artstore/blob/1e04ab7ef54c945169b07c90d39ff9b0a3817efc/static/Readme%20images/amiresponsive.png" border="0" alt="Responsiveness image." title="Responsive Art Store" /></a>
+[Am I responsive](http://ami.responsivedesign.is/#)
 
 ## About
 This is a Art Store for art-lovers with a lot of extra services. It contains the following:
-* A store for Art with Stripe Payment System
-* A View-art-section with art, galleries and artists
-* A Art-news-site with real time updated articles from three large radio-shows at [Swedish Radio](https://sverigesradio.se/)
-* A Art-event site
+* Store for Art with Stripe Payment System
+* View-art-section with art, galleries and artists
+* Art-news-site with real time updated articles from three large radio-shows at [Swedish Radio](https://sverigesradio.se/)
+* Art-event site
 * Log in and register functionality for users who are going to buy art from this site. 
 * Log in functionality for Artists and Gallery-owners who wish to contribute with content to this site (grouped with different permissions). 
 
@@ -40,7 +42,7 @@ Swedish Radio here is one site on wich you can view them all. The description of
 
 #### The Artist
 Artists are also art consumers but this site also gives them the possibility to display themself and their work. 
-Artist can gain a access to the backend of this site and login as admin.
+Artists can gain a access to the backend of this site and login as admin.
 As artist admin they have been given some credentials to edit in the admin of this site. 
 They have access to edit art, products for the store, galleries and artist-info. Also they can add events. 
 
@@ -55,7 +57,7 @@ to make them present themself to the art consumers.
 create and spread events such as masterclasses, charity events and exhibitions. 
 
 * **Sell art:** Artists with printed art can display it and sell it through the webshop on this site. The site is made for selling art from many artists in the same place
-- that will attract more customers. 
+ this will attract more customers. 
 
 #### The Gallerist
 Galleries has their own template on this site where they can display their gallery. In the database the gallery, artist and art is connected
@@ -69,8 +71,8 @@ to the art consumers.
 
 #### The Journalist
 * **Find News:** Artists and media is depending of eachother. This site displays art news from Swedish State Radio but naturally there is art news in many other places, for instance in newspapers.
-However that is yesterdays news to journalists. As this site has artists and gallerists as admins it's the prefect site to visit for journalists
-looking for new news to write about. 
+However that is yesterdays news to journalists. As this site has artists and gallerists as admins it's the perfect site to visit for journalists
+looking for news to write about. 
 
 * **Learn more:** With info about galleries, artists and art anyone who want's to get a deeper knowledge about 
 this can visit this site. The info on this site is ment to be kept short. Instead of 
@@ -105,12 +107,11 @@ Fist slide in all carousels is a explanation of the content.
 
 * **admin:** The Django Admin is a important part of this site as it's intended to be used by both
 artists and gallery owners. The admin has got colors to match the pink theme on the main site, as well 
-as som pink dots. The events site in admin is styled as a calendar through a Django App called Events.
-There is one group for artists and gallerists in admin holding certain rights to edit certing functions in admin. 
+as some pink dots. The events site in admin is styled as a calendar through a Django App called Events.
+There is one group for artists and gallerists in admin holding certain rights to edit certain functions in admin. 
 
 ## Features
 
-In this section, you should go over the different parts of your project, and describe each in a sentence or so.
  
 ### Existing Features
 
@@ -129,7 +130,7 @@ Credit card Payment with Stripe | Get informaton about the Galleries | Click a l
 * Since artists and galleries is from Sweden translations would be nice for Swedish, German and Danish
  
 #### Webshop
-* If many users some sort of limit for how many items from each artist allowed
+* If many artist would use the site, some sort of limit for how many items from each artist allowed would be good to have
 * If many users -add paging to the site
 * Add more info about the products, sizes, quality etc.
 * A system of how to pay the artists and how to get the actual products to the customers has to be developed
@@ -158,20 +159,16 @@ This requires collaboration with other companies
 * Admin css could be even more close to the Art Store site -the user should feel everything is the same website
 * Scheduler is written in the events app. It only displays times in the calendar -it would be nice with some words in there
 * Scheduler to the front - a slightly more wordy calendar should be displayed on the website frontend. 
-* This site doesn't display email or phonenumbers making it possible for users to contact admin or request higher user credentials. 
+* This site doesn't have a contact form -such could be customized with check boxes like -are you a artist, a gallerist etc. 
 * The site doesn't have any written out rules and limits for admins regarding what they are allowed to do in admin. For instance restrictions
 on how many art-items they can add to the views or to the shop. 
 
 ## Technologies Used
 * [Python3](https://www.python.org/download/releases/3.0/)
-    - The project is written in **Python 3.7** 
-* [Jinja](https://pypi.org/project/Jinja2/)
-    - Jinja is used in the templates to reference the database objects and add 
-    intelligence ie filters and conditions for the displayed data. For instance is the shopping
-    cart not displayed in the menu until something actually is in it.  
+    - The project is written in **Python 3.7**  
 * [JQuery](https://jquery.com)
     - In the frontend Javascript and the library Jquery is used in order to make boostrap components like the 
-    carousel work and also to fetch data from the Swedish Radio Web API (this is a free API) with a AJAX-request method.
+    carousels work and also to fetch data from the Swedish Radio Web API (this is a free API) with a AJAX-request method.
 * [Chrome Dev Tools](https://developers.google.com/web/tools/chrome-devtools)
     - Developer Tools from Chrome is used to track problems in the frontend and also to find items in admin html to alter
 * [Pillow](https://pillow.readthedocs.io/en/stable/)
@@ -331,7 +328,7 @@ In theia terminal -write:
 python3 manage.py test products
 ```
 #### Travis
-*Travis CI is a hosted[2] continuous integration service used to build and test software projects hosted at GitHub and Bitbucket. Explanation from: *[Wikipedia](https://en.wikipedia.org/wiki/Travis_CI)
+*Travis CI is a hosted continuous integration service used to build and test software projects hosted at GitHub and Bitbucket.* ( [Wikipedia](https://en.wikipedia.org/wiki/Travis_CI) )
 
 Travis runs commands specified in a .travis.yml -file on each push to github. The Travis button on top of this Readme indicates if the programme passed the test. 
 
@@ -366,7 +363,7 @@ The manual tests has been performed by 5 test users and has followed this protoc
 * Try to login with the wrong credentials 
 * Try to login with empty fields
 
-#### Admin 
+##### Admin 
 * As a normal customer -try to get in to admin (expected to fail with no access)
 * As a artist customer  - try to get in to admin (expected to pass)
 * Add art, artist and gallery 
@@ -379,26 +376,26 @@ The manual tests has been performed by 5 test users and has followed this protoc
 * Navigation in admin -test all buttons and links
 * As a superuser -go to admin and edit all functions (expected to pass)
 
-#### Buttons links and search
+##### Buttons links and search
 * Test all buttons including them in the dropups in bottom navbar from all pages 
 * Search for products in artstore
 
-#### Carousels (Art, Artists, Events and Galleries)
+##### Carousels (Art, Artists, Events and Galleries)
 * Carousels should spin by themself if user do nothing
 * Carousels should stop and zoom on hover
 * Buttons in the carousel should change views in a correct manner 
 
 
-#### Contact
+##### Contact
 * Email button in nav should send you to your email-programme
 * dummy email adress to the artstore should be displayed in the email you are about to send 
 
-#### Art News
+##### Art News
 * Go to news site (expected to see text and news from three programmes)
 * Follow the links to the radio shows on Swedish Radio 
 * Confirm this is actually the latest episode of each programme
 
-#### Responsiveness
+##### Responsiveness
 * Notice Store and News displays on column on small screens and three on larger
 * Notice carousels on art, artists, galleries and events has full screen width on small screens
     and is vertical and horzontal centered on all screens. 
