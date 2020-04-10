@@ -4,9 +4,11 @@
 ![Heroku](https://heroku-badge.herokuapp.com/?app=heroku-badge)
 <a href="http://www.djangoproject.com/"><img src="https://www.djangoproject.com/m/img/badges/djangoproject120x25.gif" border="0" alt="A Django project." title="A Django project." /></a>
 # The Art Store 
-<a href="https://petrasartstore.herokuapp.com/products/"><img src="https://github.com/ringarochkryss/artstore/blob/1e04ab7ef54c945169b07c90d39ff9b0a3817efc/static/Readme%20images/amiresponsive.png" border="0" alt="Responsiveness image." title="Responsive Art Store" /></a>
+
+![Art Store](https://github.com/ringarochkryss/artstore/blob/9a16a7f7ec0bef7edece76fd6a9c3f8e20900a43/static/Readme%20images/amiresponsive.png)
 [Am I responsive](http://ami.responsivedesign.is/#)
 
+![Image description](link-to-image)
 ## About
 This is a Art Store for art-lovers with a lot of extra services. It contains the following:
 * Store for Art with Stripe Payment System
