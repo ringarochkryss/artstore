@@ -413,9 +413,18 @@ The manual tests has been performed by 5 test users and has followed these proto
 6. Perform all tests from above on mobile, tablet and large screen to make sure it works on them all.
 
 #### Bugs and problems
-* Add item to chart in the Art store without adding a actual number in the input field generates a error outside the programme. 
-This should be fixes by adding a default value of 1 to the input field (not just a placeholder as now). 
-If the error still is provoced it should result in a alert inside the programme. 
+* In the art store an outside error was called if users press the plus button to add a item to the cart without first 
+chosing amount of items. This bug was fixed by setting a 
+default value of 1 to all items (as this is common practice in web shops). 
+This means that the fix for the problems was the following: 
+if the user just press the plus button and nothing else -he or she will add one item to the cart. 
+However it's still possible to provoke this outside error if a user would change the value to 0 in the art store and then 
+try to add 0 items to the cart.
+Worth mentioning is that once you get to cart and checkout - you can choose 0 to remove the item from the cart -and this works fine.
+So the error left to fix here is very unlikely to happen and requires very strange user actions. The fix for it could be
+to give an error message in the alert instead -or close to the product with the 0-value. Another way would be to mark 0 as a forbidden value
+in the input form, shining red, and make it impossible to press the plus button. 
+So with this said - I have actually chosen to leave this fix for future improvements as it requires a very unlikely irrational useraction. 
 
 ## Deployment
 Deployment to Heroku was performed by:
