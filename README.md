@@ -16,7 +16,7 @@ This is a Art Store for art-lovers with a lot of extra services. It contains the
 * View-art-section with art, galleries and artists
 * Art-news-site with real time updated articles from three large radio-shows at [Swedish Radio](https://sverigesradio.se/)
 * Art-event site
-* Log in and register functionality for users who are going to buy art from this site. 
+* Log in and register functionality is required for users who are going to buy art from this site or view art, artists, news and events. 
 * Log in functionality for Artists and Gallery-owners who wish to contribute with content to this site (grouped with different permissions). 
 
 ## UX -who this website is for
