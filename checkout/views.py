@@ -57,14 +57,14 @@ def checkout(request):
 # give message to customer how it went with the purchase
 
             if customer.paid:
-                messages.error(request, "Thankyou for your order!")
+                messages.error(request, "Thank You for your purchase, your order will be delivered within 4 days.")
                 request.session['cart'] = {}
                 return redirect(reverse('products'))
             else:
-                messages.error(request, "Unable to take payment")
+                messages.error(request, "Payment failed -please try again.")
         else:
             print(payment_form.errors)
-            messages.error(request, "We were unable to take a payment with that card!")
+            messages.error(request, "We were unable to take a payment with that card, please try another one!")
     else:
         payment_form = MakePaymentForm()
         order_form = OrderForm()

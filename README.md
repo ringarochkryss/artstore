@@ -424,7 +424,7 @@ Worth mentioning is that once you get to cart and checkout - you can choose 0 to
 So the error left to fix here is very unlikely to happen and requires very strange user actions. The fix for it could be
 to give an error message in the alert instead -or close to the product with the 0-value. Another way would be to mark 0 as a forbidden value
 in the input form, shining red, and make it impossible to press the plus button. 
-So with this said - I have actually chosen to leave this fix for future improvements as it requires a very unlikely irrational useraction. 
+So with this said - I have chosen to leave this fix for future improvements as it is reduced to require a very unlikely irrational useraction. 
 
 ## Deployment
 Deployment to Heroku was performed by:
