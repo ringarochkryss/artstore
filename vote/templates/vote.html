@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load static from staticfiles %}
+{% load bootstrap_tags %}
+
+{% block content %}
+
+  <div class="container" id="">
+
+    <h3>Select art from the gallery that you would like to be printed for sale in our artstore .</h3>
+    <h5>{{ message }}</h5>
+
+    <form action="" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+
+  </div>
+
+{% endblock %}
+
