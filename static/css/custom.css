@@ -332,3 +332,26 @@ border-radius: 50%;
 background-color: black;
 border-radius: 50%;
 }
+
+/* paging styling Source:  http://www.tutorialsplane.com/bootstrap-pagination-example-demo */
+.pagination li a {
+   border-radius: 50% !important;margin: 0 6px;
+}
+
+.pagination li a {
+    color: black;
+}
+
+
+
+.page-item.active .page-link {
+    background: #fc032c;
+    border:#fc032c;
+    color: white;
+}
+
+.page-item.active .page-link:hover {
+    background: black;
+    border:#fc032c;
+    color: white;
+}
