@@ -3,7 +3,7 @@ from .models import Vote
 
 
 class VotingForm(forms.Form):
-    chosen_art_options = forms.MultipleChoiceField(choices=[], label='Art', required=False,
+    chosen_art_options = forms.MultipleChoiceField(choices=(), label='Art from the Galleries', required=False,
                                                      widget=forms.SelectMultiple(
                                                         attrs={
                                                              'class': 'form-control'
@@ -19,5 +19,5 @@ class VotingForm(forms.Form):
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        unique_galleryarts = Vote.objects.order_by('galleryart').values_list('galleryart', flat=True).distinct()
-        self.fields['chosen_art_options'].choices = [(galleryart, galleryart) for galleryart in unique_galleryarts]
+        unique_artnames = Vote.objects.order_by('artname').values_list('artname', flat=True).distinct()
+        self.fields['chosen_art_options'].choices = [(artname, artname) for artname in unique_artnames]

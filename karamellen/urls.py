@@ -23,18 +23,20 @@ from events import urls as urls_events
 from exhibit import urls as urls_exhibit
 from checkout import urls as urls_checkout
 from vote import urls as urls_artvotes
+from vote import urls as urls_vote_counts
 from events.views import all_events
 from exhibit.views import all_galleries
 from exhibit.views import all_galleryart
 from vote.views import artvotes
 from exhibit.views import all_galleryartists
 from products.views import all_products
+from vote.views import vote_counts
 from django.views import static
 from .settings import MEDIA_ROOT
 
 
 admin.site.site_header = 'Art Store Administration'       # default: "Django Administration"
-admin.site.index_title = 'Welcome! Here you can add products for the store or schedule events.' # default: "Site administration"
+admin.site.index_title = 'Welcome! Here you can add products for the store, schedule events or add art, gallery or artist-info.' # default: "Site administration"
 admin.site.site_title = 'Art Store Administration' # default: "Django site admin"
 
 urlpatterns = [
@@ -43,6 +45,8 @@ urlpatterns = [
     url(r'^$', all_events, name='events'),
     url(r'^$', all_galleries, name='galleries'),
     url(r'^$', artvotes, name='artvotes'),
+    url(r'^$', vote_counts, name='votecounts'),
+    url(r'^votecounts$', vote_counts, name='votecounts'),
     url(r'^galleries$', all_galleries, name='galleries'),
     url(r'^galleryart$', all_galleryart, name='galleryart'),
     url(r'^galleryartists$', all_galleryartists, name='galleryartists'),

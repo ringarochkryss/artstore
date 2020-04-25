@@ -243,7 +243,7 @@ pip3 freeze --local > requirements.txt
 ```
 #### Run 
 ```
-python3 manage.py makemigrations
+$ python3 manage.py runserver
 ```
 #### Changes involving the database
 ```
@@ -273,7 +273,7 @@ $ python3 manage.py clear_cache
 ```
 
 #### Git ignore fail
-Git ignore didn' work after I had been moving files around in my workspace. 
+Git ignore didn't work after I had been moving files around in my workspace. 
 I found out they were cached in the repository.  Source: stackoverflow-hero MarckK 
 ```
 git rm -r --cached .
@@ -311,7 +311,7 @@ Paste this in the base_site.html:
 
 {% block nav-global %}{% endblock %}
 
-Note: It't important the app is before the admin app in INSTALLED_APPS, otherwise your template doesn't override django's
+Note: It's important the app is before the admin app in INSTALLED_APPS, otherwise your template doesn't override django's
 ```
 ![Admin calendar](https://github.com/ringarochkryss/artstore/blob/1a673310b601b1ad57480393a1cc2a2c69d7fbe4/static/Readme%20images/amiresponsiveadminsmall.png)
 
@@ -357,10 +357,10 @@ The manual tests has been performed by 5 test users and has followed these proto
 11. Remove one item from chart 
 12. Go back and add another item to the chart 
 13. Continue to checkout 
-14. Buy items with 555 dummy creditcard (= a non working card)
+14. Buy items with dummy 555 creditcard (= a non working card)
 15. Notice alert
 16. Buy items with 42x8 dummy creditcard (=a working card)
-17. Notice if message pops up with thank you for your purchase 
+17. Notice if the message pops up with thank you for your purchase 
 18. Notice if you get back to the Art Store site 
 
 ##### Login
@@ -399,7 +399,7 @@ The manual tests has been performed by 5 test users and has followed these proto
 2. dummy email adress to the artstore should be displayed in the email you are about to send 
 
 ##### Art News
-1. Go to news site (expected to see text and news from three programmes)
+1. Go to the news site (expected to see text and news from three programmes)
 2. Follow the links to the radio shows on Swedish Radio 
 3. Confirm this is actually the latest episode of each programme
 

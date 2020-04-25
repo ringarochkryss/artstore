@@ -114,7 +114,12 @@
          
       <li class="nav-item active redbuttonlarge my-2 my-sm-0 btn-group dropup">
         <a class="nav-link dropdown-toggle buttontext" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          User</br>
+          {% if user.is_authenticated %}
+          {{user.username}}
+          {%  else %}
+          User
+          {% endif %}
+          </br>
         </a>
         <div class="dropdown-menu justify-content-center text-center" aria-labelledby="navbarDropdown">
 

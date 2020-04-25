@@ -24,7 +24,30 @@
             </div>
         </div>
     {% endfor %}
-    
+{% if products.has_other_pages %}
+
+<nav aria-label="products in artstore">
+  <ul class="pagination justify-content-center">
+        {% if products.has_previous %}
+        <li class="page-item"><a class="page-link" href="?page={{ products.previous_page_number }}">&laquo;</a></li>
+        {% else %}
+        <li class="page-item disabled"><span>&laquo;</span></li>
+        {% endif %}
+    {% for i in products.paginator.page_range %}
+        {% if products.number == i %}
+            <li class="page-item active"><span>{{ i }} <span class="sr-only">(current)</span></span></li>
+        {% else %}
+            <li class="page-item"><a class="page-link" href="?page={{ i }}">{{ i }}</a></li>
+        {% endif %}
+    {% endfor %}
+        {% if products.has_next %}
+        <li class="page-item"><a class="page-link" href="?page={{ products.next_page_number }}">&raquo;</a></li>
+        {% else %}
+        <li class="page-item disabled"><span>&raquo;</span></li>
+        {% endif %}
+  </ul>
+</nav>
+{% endif %}
 </div>
 
 {% endblock %}

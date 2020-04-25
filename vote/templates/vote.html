@@ -16,6 +16,13 @@
     </form>
 
   </div>
-
+<div class="row">
+<p>Read the list</p>
+<ul>
+    {% for choices in choices.chosen_art_options.all %}
+<li>{{choices.choice_artname}}{{choices.choice_count}}</li>
+    {% endfor %}
+</ul>
+</div>
 {% endblock %}
 

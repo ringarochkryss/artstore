@@ -4,20 +4,31 @@ from exhibit.models import GalleryArt
 # Reference: Matt Freire https://github.com/justdjango/Analytics_App/tree/master/src/survey
 
 class Vote(models.Model):
-    galleryart= models.ForeignKey(GalleryArt, null=False)
+    artname= models.ForeignKey(GalleryArt, max_length=200)
     count = models.IntegerField(default=0)
 
     def __str__(self):
-        return '%s: %d votes' % (self.galleryart, self.count)
+        return '%s: %d votes' % (self.artname, self.count)
+
+
 
     @classmethod
-    def bulk_vote(cls, galleryarts):
+    def bulk_vote(cls, artnames):
         with transaction.atomic():
-            for book_name in galleryarts:
-                if len(galleryart) == 0:
+            for artname in artnames:
+                if len(artname) == 0:
                     continue
 
-                if Vote.objects.filter(galleryart=galleryart).exists():
-                    Vote.objects.filter(galleryart=galleryart).update(count=models.F('count') + 1)
+                if Vote.objects.filter(artname=artname).exists():
+                    Vote.objects.filter(artname=artname).update(count=models.F('count') + 1)
                 else:
-                    Vote.objects.create(galleryart=galleryart, count=1)
+                    Vote.objects.create(artname=artname, count=1)
+
+
+class VoteCounting(models.Model):
+    artname = models.ForeignKey(GalleryArt, null=False)
+    count = models.ForeignKey(Vote, null=False)
+
+
+    def __str__(self):
+        return self.artname
