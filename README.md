@@ -12,12 +12,13 @@ This site is published on Heroku to be seen [here](https://petrasartstore.heroku
 
 ## About
 This is a Art Store for art-lovers with a lot of extra services. It contains the following:
-* Store for Art with Stripe Payment System
+* Store for Art with Stripe Payment System, search and paging
 * View-art-section with art, galleries and artists
 * Art-news-site with real time updated articles from three large radio-shows at [Swedish Radio](https://sverigesradio.se/)
 * Art-event site
-* Log in and register functionality is required for users who are going to buy art from this site or view art, artists, news and events. 
+* Log in and register functionality - This is required for users who are going to buy art from this site or view art, artists, news and events. 
 * Admin Log in functionality for Artists and Gallery-owners who wish to contribute with content to this site (grouped with different permissions). 
+To make this easy for them, they (only) can access admin with a button when they first press the userbutton with their name on in the navbar.
 
 ## UX -who this website is for
  This site is built as a meeting point for art professionals and art consumers -all sharing the common interest of art.
@@ -105,16 +106,19 @@ In the botton nav there is a seach bar connected to a button.
 * **Shop and media content:** Bootstrap cards is used in three columns to display items in the shop and
 radio episodes at the media site. In both cases images is used. All art images is decorated with 
 zoom functionality to make them larger on hover. 
+The web shop content is organized with Django paging. 
 
 * **Carousels:** Art, artists, galleries and events is displayed in large carousels. On hover They
 get bigger sometimes even hiding the top header and images in carousels can be even larger on hover.
 The carousels is spinning unless they are hovered. 
-Fist slide in all carousels is a explanation of the content.
+First slide in all carousels is a explanation of the content.
 
 * **admin:** The Django Admin is a important part of this site as it's intended to be used by both
 artists and gallery owners. The admin has got colors to match the pink theme on the main site, as well 
 as some pink dots. The events site in admin is styled as a calendar through a Django App called Events.
 There is one group for artists and gallerists in admin holding certain rights to edit certain functions in admin. 
+Only users marked as superusers or staff can access admin with a admin-button under the user-button in the navbar. This
+Userbutton has the name User. If the user is logged in, the users name is written on the button.  
 
 ## Features
 
@@ -122,11 +126,11 @@ There is one group for artists and gallerists in admin holding certain rights to
 ### Existing Features
 
 
-Webshop           | Art/Artist/Gallery  | News              | Events             | Admin   
-------------------|:-------------------:|:-----------------:|:------------------:|--------------:|
-Visitors can view and add products to the cart | Visitors can View Art | View Art News and image from three popular radio shows| See all art events |For Artists and Gallerists 
-Add or remove items -then buy it| Read about the artists | Read news -The site always displays the latest episode Fetched via Javascript from the free API| Images, who and when | Edit, add or delete products &, events As well as Artists, Galleries and Art
-Credit card Payment with Stripe | Get informaton about the Galleries | Click a link to listen  | | Admins who get super user status can overview all actions on the site 
+Webshop           | Art/Artist/Gallery  | News              | Events             | Admin   | Login |
+------------------|:-------------------:|:-----------------:|:------------------:|--------------:|--------------:|
+Visitors can search art view art on paging-design and add products to the cart. User can | Visitors can View Art | View Art News and image from three popular radio shows| See all art events |For Artists and Gallerists |Users have to login to see certain pages and to pay in the artstore
+Add or remove items -then buy it| Read about the artists | Read news -The site always displays the latest episode Fetched via Javascript from the free API| Images, who and when | Edit, add or delete products &, events As well as Artists, Galleries and Art |Bootstrap forms for register, login and payments 
+Credit card Payment with Stripe | Get informaton about the Galleries | Click a link to listen  | | Admins who get super user status can overview all actions on the site, Only superusers or artists is shown the admin button in the navbar. | Login gives the user access to all pages on this site accept admin. For this the user needs to be superuser or staff. 
 
 
 
@@ -137,7 +141,6 @@ Credit card Payment with Stripe | Get informaton about the Galleries | Click a l
  
 #### Webshop
 * If many artist would use the site, some sort of limit for how many items from each artist allowed would be good to have
-* If many users -add paging to the site
 * Add more info about the products, sizes, quality etc.
 * A system of how to pay the artists and how to get the actual products to the customers has to be developed
 * Notice when product is sold out
@@ -205,9 +208,16 @@ on how many art-items they can add to the views or to the shop.
     - *"sqlparse is a non-validating SQL parser for Python. It provides support for parsing, splitting and formatting SQL statements."*
 * [urllib3](https://urllib3.readthedocs.io/en/latest/)
     - urllib3 is a HTTP client for Python.
+* [Django Pagination](https://simpleisbetterthancomplex.com/tutorial/2016/08/03/how-to-paginate-with-django.html)
+    - When art is displayed in cards, this site uses pagination to make it easier to overview and use. 
+    - [Django Pagination w cards stackoverflow](https://stackoverflow.com/questions/57832339/how-to-paginate-bootstrap-cards-with-django)
+    - [Bootstrap Django Pagination](https://getbootstrap.com/docs/4.0/components/pagination/)
+    - [Bootstrap Django Pagination custom styling: tutorialsplane.com](http://www.tutorialsplane.com/bootstrap-pagination-example-demo/)
+    - [Bootstrap Django Pagination custom styling: jquery-az-com](https://www.jquery-az.com/bootstrap-4-pagination-9-demos-custom-default-css/)
 * [Django](https://docs.djangoproject.com/en/3.0/intro/tutorial01/)
     - The project is written in Django.
-There is a lot to be said about writing a programme in Django, here is a small summary:
+
+There is a lot to be said about writing a programme in Django. One is that you need to keep certain commands in a easy accessed "dictonary" for copy-paste into the terminal.  Here is a small summary of working with Django and in the same time my dictonary for this site:
 
 #### Start a new project
 ```
@@ -372,7 +382,7 @@ The manual tests has been performed by 5 test users and has followed these proto
 6. Try to login with empty fields
 
 ##### Admin 
-1. As a normal customer -try to get in to admin (expected to fail with no access)
+1. As a normal customer -try to get in to admin (expected to fail with no access and no button to press)
 2. As a artist customer  - try to get in to admin (expected to pass)
 3. Add art, artist and gallery 
 4. edit the above 
@@ -387,6 +397,8 @@ The manual tests has been performed by 5 test users and has followed these proto
 ##### Buttons links and search
 1. Test all buttons including them in the dropups in bottom navbar from all pages 
 2. Search for products in artstore
+3. Try the paging in the art store by moving front and back
+4. Login and the userbutton should be showing your username.
 
 ##### Carousels (Art, Artists, Events and Galleries)
 1. Carousels should spin by themself if user do nothing
