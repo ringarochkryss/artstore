@@ -13,7 +13,7 @@
                 {% for event in events %} 
                 <tr>
                     <td class="align-middle"><p>{{event.day }}</p>
-                        <div class="eventimage" style="background-image: url('{{ MEDIA_URL }}{{ event.image }}')"></div>
+                        <div class="eventimage zoom" style="background-image: url('{{ MEDIA_URL }}{{ event.image }}')"></div>
                         <p><strong>{{ event.artist }}</strong></p>
                     </td>
                     <td class="align-middle"><p>{{ event.notes }}</p></td>
