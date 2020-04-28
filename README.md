@@ -42,7 +42,7 @@ art on display in the galleries and also learn more about the actual galleries, 
 in the beautiful surroundins visiting local artists and buying art. This year nobody can dot that. This site has a virtual gallery displaying art for everyone who can't travel to the gallery in person. 
 The Art Images is enlarged on hover, it's both to improve the experience for everyone and also a help to visitors with poor vision. After all those who are most locked in right now is the elderly and they often have trouble seeing small items.  
 
-* **Event info:** Consumers can read about Art Events such as masterclasses and charity art meets.
+* **Event info:** Consumers can read about Art Events such as masterclasses and charity art meets. Events is ordered by date and presented in a table.
 
 * **Art News:** There is a couple of good radio shows at the Swedish Radio about art. Here they are gathered on one site with info and image from the latest episode. So instead of going from site to site on 
 Swedish Radio here is one site on wich you can view them all. The description of these episodes is actually the latest art news and if you want to listen to the episode there is a link to Swedish Radio broadcasting site. 
@@ -108,7 +108,7 @@ radio episodes at the media site. In both cases images is used. All art images i
 zoom functionality to make them larger on hover. 
 The web shop content is organized with Django paging. 
 
-* **Carousels:** Art, artists, galleries and events is displayed in large carousels. On hover They
+* **Carousels:** Art, artists and galleries is displayed in large carousels. On hover They
 get bigger sometimes even hiding the top header and images in carousels can be even larger on hover.
 The carousels is spinning unless they are hovered. 
 First slide in all carousels is a explanation of the content.
@@ -159,10 +159,6 @@ This requires collaboration with other companies
 * Add more programmes and more info from each of the programmes
 * Add news from other sources, not just Swedish Radio 
 * Since the web site is in english -perhaps english art news would be preferable
-
-
-#### Events
-* Possibility to add several events on the same time (I have removed that possiblity for code learning reasons)
 
 #### Admin 
 * Admin css could be even more close to the Art Store site -the user should feel everything is the same website

@@ -247,6 +247,15 @@ footer {
     margin: 0 auto;
 }
 
+.eventimage
+ {
+    background-size: contain;
+    background-position: center center;
+    background-repeat: no-repeat;
+    width: 200px;
+    height: 170px;
+    margin: 0 auto;
+}
 .exhibitionimage {
     background-size: contain;
     background-position: center center;
