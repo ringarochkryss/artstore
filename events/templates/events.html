@@ -14,9 +14,8 @@
                 <tr>
                     <td class="align-middle"><p>{{event.day }}</p>
                         <div class="eventimage zoom" style="background-image: url('{{ MEDIA_URL }}{{ event.image }}')"></div>
-                        <p><strong>{{ event.artist }}</strong></p>
                     </td>
-                    <td class="align-middle"><p>{{ event.notes }}</p></td>
+                    <td class="align-middle"><h3><strong>{{ event.artist }}</strong></h3><p>{{ event.notes }}</p></td>
                     <td class="align-middle"><strong><p>{{ event.hall  }}</p></strong></td>
                 </tr>
                 {% endfor %}
