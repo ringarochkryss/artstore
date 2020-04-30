@@ -4,8 +4,8 @@
 
 {% block content %}
 <div class="row row-flex">
-    {% for item in cart_items %}
-    
+<!--All products in the cart amount and sum-->
+    {% for item in cart_items %}    
     <div class="col-xs-10 col-xs-offset-1 col-sm-offset-0 col-sm-6 col-md-4 display card card-display">
         <p class="product-artistname">{{ item.product.artistname }}</p>
         <div class="product" style="background-image: url('{{ MEDIA_URL }}{{ item.product.image }}')"></div>

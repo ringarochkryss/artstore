@@ -1,6 +1,6 @@
 {% extends "admin/base.html" %}
-{% load static from staticfiles %} # This might be just {% load static %} in your ENV
-
+{% load static from staticfiles %} 
+<!--Change header texts in Django Admin-->
 {% block title %}{{ title }} | {{ site_title|default:_('Django site admin') }}{% endblock %}
 
 {% block extrastyle %}{{ block.super }}<link rel="stylesheet" type="text/css" href="{% static "css/admin-extra.css" %}" />{% endblock %}

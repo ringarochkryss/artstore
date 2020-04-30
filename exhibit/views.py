@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect, reverse
 from .models import Gallery, GalleryArt, GalleryArtist
 
 
-# return all galleries in the database.
+# return all galleries, art and artist in the database.
 def all_galleries(request):
     galleries = Gallery.objects.all()
     return render(request, "gallery.html", {"galleries":galleries})

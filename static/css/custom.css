@@ -25,7 +25,6 @@ body {
 }
 
 .bottomnavbarbackground {
-    /*background-color:  rgb(10, 10, 10, .8);*/
     background-image: linear-gradient(transparent, rgba(10, 10, 10, 0.1),rgba(10, 10, 10, 0.4),rgb(10, 10, 10, .9));
 }
 
@@ -238,6 +237,9 @@ footer {
     color: white;
 }
 
+/*Images*/
+
+/*Product Image*/
 .product {
     background-size: contain;
     background-position: center center;
@@ -284,6 +286,7 @@ footer {
     margin: 0 auto;
 }
 
+/*Carousels and Cards*/
 caption p {
     word-wrap: break-word;
 }
@@ -322,6 +325,8 @@ background-color: white !important;
     font-size: 150px; 
     color: hsl(350, 98%, 50%);
 }
+
+/*Zoom images on hover*/
 /*https://www.w3schools.com/howto/howto_css_zoom_hover.asp*/
 .zoom {
   transition: transform .2s; /* Animation */
@@ -342,7 +347,7 @@ background-color: black;
 border-radius: 50%;
 }
 
-/* paging styling Source:  http://www.tutorialsplane.com/bootstrap-pagination-example-demo */
+/* paging  -styling Source:  http://www.tutorialsplane.com/bootstrap-pagination-example-demo */
 .pagination li a {
    border-radius: 50% !important;margin: 0 6px;
 }
@@ -350,8 +355,6 @@ border-radius: 50%;
 .pagination li a {
     color: black;
 }
-
-
 
 .page-item.active .page-link {
     background: #fc032c;

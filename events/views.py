@@ -4,7 +4,7 @@ from .models import Event
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
 # Create your views here.
-# return all events in the database.
+# return all events in the database ordered on date.
 def all_events(request):
     events = Event.objects.all().order_by('day','start_time')
 # .........Pagination..........................................

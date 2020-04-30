@@ -4,10 +4,10 @@ from django.db.models import Q
 
 class CaseInsensitiveAuth:
     """
-    OBS! Authenticate a of User by using a case-insensitive query to check a
+    OBS! Authenticate of a user by using a case-insensitive query to check a
     combination of the supplied email/username and password.
     To avoid the risk of having two users with similar usernames,
-    distinguished only by letter case (e.g. 'john' and 'John'), consider
+    distinguished only by letter case (e.g. 'jane' and 'Jane'), consider
     updating your User model to save usernames as lower case entries to
     the database.
     This will ensure all usernames have unique spellings, and as a result,
@@ -34,7 +34,7 @@ class CaseInsensitiveAuth:
 
     def get_user(self, user_id):
         """
-        Used by the Django authentication system to retrieve a User instance
+        This is used by the Django authentication system to retrieve a User instance
         """
         try:
             user = User.objects.get(pk=user_id)

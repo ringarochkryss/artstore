@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 {% block content %}
 <div class="row row-flex mb-4">
+<!--Display all products in the web store as Boostrap Cards-->
     {% for product in products %}
         <div class="col-xs-10 col-xs-offset-1 col-sm-offset-0 col-sm-6 col-md-4 display card card-default mb-4">
             <div>
@@ -24,6 +25,7 @@
             </div>
         </div>
     {% endfor %}
+    <!--Paging-->
 {% if products.has_other_pages %}
 <div class="col-12 pagingstyles">
 <nav aria-label="products in artstore">
